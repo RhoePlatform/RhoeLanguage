@@ -1,0 +1,43 @@
+Artifact(
+  id: "growth-review",
+  title: "Growth Strategy Review",
+  carrierArchetype: stageFrame,
+  genre: executiveDecision,
+  compositionGrammarRef: "executive/default"
+) {
+  FrontMatter {
+    FrameSet(id: "opening", aspect: "16:9") {
+      Frame(shellRole: coverOpener, shell: "cover-standard") {
+        Zone(main) {
+          TextBlock(text: "Growth Strategy Review")
+        }
+      }
+    }
+  }
+  MainMatter {
+    FrameSection(title: "Decision") {
+      FrameSet(id: "core", aspect: "16:9") {
+        Frame(shellRole: comparisonOption, shell: "option-comparison") {
+          Zone(header) {
+            TextBlock(text: "Option B creates the strongest margin expansion with acceptable execution risk.")
+          }
+          Zone(main) {
+            TableBlock(rows: tableRows)
+          }
+          Zone(aside) {
+            TextBlock(text: "Assumptions: phased migration, pricing uplift, no phase-one headcount reduction.")
+          }
+        }
+      }
+    }
+  }
+  BackMatter {
+    AppendixFrameSet(id: "appendix") {
+      Frame(shellRole: appendixSupport) {
+        Zone(main) {
+          TextBlock(text: "Appendix evidence and references.")
+        }
+      }
+    }
+  }
+}

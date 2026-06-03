@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>RhoeHTML Inline Bundle</title>
+    <style>
+      body { margin: 0; font-family: "Source Serif 4", serif; color: #202020; background: #fffdf8; }
+      .rhoe-artifact { max-width: 72rem; margin: 0 auto; padding: 2rem; }
+      .rhoe-viewer-toolbar { display: flex; justify-content: space-between; gap: 1rem; align-items: center; padding: 0.875rem 1.25rem; border-bottom: 1px solid #d7d0c4; background: #f4efe5; font-family: "IBM Plex Sans", sans-serif; font-size: 0.95rem; }
+      .rhoe-viewer-toolbar p { margin: 0; }
+      .rhoe-frame { border: 1px solid #d7d0c4; border-radius: 0.75rem; padding: 1rem; margin-block: 1rem; background: white; }
+      .rhoe-zone[data-rhoe-role="header"] { font-family: "IBM Plex Sans", sans-serif; font-weight: 600; }
+      .rhoe-viewer .rhoe-frame[hidden] { display: none; }
+      .rhoe-viewer .rhoe-frame[data-rhoe-active="true"] { outline: 2px solid #0d5a68; outline-offset: 0.15rem; box-shadow: 0 12px 28px rgba(24, 50, 63, 0.12); }
+      .rhoe-viewer.is-presenter-mode .rhoe-artifact { max-width: 88rem; }
+    </style>
+  </head>
+  <body class="rhoe-viewer" data-rhoe-profile="viewer">
+    <header class="rhoe-viewer-toolbar" data-rhoe-node="ViewerChrome">
+      <p>Use Left/Right, Home/End, and P for presenter mode.</p>
+      <p data-rhoe-viewer-status>Frame 1 of 1</p>
+    </header>
+    <article class="rhoe-artifact rhoe-viewer" data-rhoe-node="Artifact" data-rhoe-profile="viewer">
+      <section class="rhoe-main-matter" data-rhoe-node="MainMatter">
+        <section class="rhoe-frameset" data-rhoe-node="FrameSet" id="inline-viewer-template">
+          <section class="rhoe-frame" data-rhoe-node="Frame" data-rhoe-shell-role="summaryTakeaway" id="inline-viewer-template-1">
+            <div class="rhoe-zone" data-rhoe-node="Zone" data-rhoe-role="main">
+              Inline viewer bundle content.
+            </div>
+          </section>
+        </section>
+      </section>
+    </article>
+    <script>
+      const frames = Array.from(document.querySelectorAll(".rhoe-viewer .rhoe-frame"));
+      const status = document.querySelector("[data-rhoe-viewer-status]");
+      let index = 0;
+      const activate = next => {
+        index = Math.max(0, Math.min(next, frames.length - 1));
+        frames.forEach((frame, i) => {
+          frame.hidden = i !== index;
+          frame.dataset.rhoeActive = i === index ? "true" : "false";
+          frame.setAttribute("aria-hidden", i === index ? "false" : "true");
+          frame.tabIndex = i === index ? 0 : -1;
+        });
+        if (status) status.textContent = `Frame ${index + 1} of ${frames.length}`;
+        document.documentElement.dataset.rhoeViewerIndex = String(index);
+      };
+      document.addEventListener("keydown", event => {
+        if (event.key === "ArrowRight") activate(index + 1);
+        if (event.key === "ArrowLeft") activate(index - 1);
+        if (event.key === "Home") activate(0);
+        if (event.key === "End") activate(frames.length - 1);
+        if (event.key.toLowerCase() === "p") document.body.classList.toggle("is-presenter-mode");
+      });
+      activate(0);
+      document.documentElement.dataset.rhoeInline = "true";
+    </script>
+  </body>
+</html>

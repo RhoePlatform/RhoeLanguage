@@ -1,0 +1,39 @@
+{
+  "id": "rhoeHtmlCore",
+  "label": "RhoeHTML Core",
+  "packageKind": "realizationPack",
+  "version": "0.9.0",
+  "targetSurface": "rhoeHtml",
+  "realizationProfiles": [
+    "rhoeHtml/document",
+    "rhoeHtml/viewer",
+    "rhoeHtml/portal"
+  ],
+  "carrierArchetypes": [
+    "stageFrame",
+    "codexSpread",
+    "scrollStream",
+    "tableauPageCollage",
+    "sheetField",
+    "ledgerRegister",
+    "box",
+    "conversationThread"
+  ],
+  "entrypoints": {
+    "document": "templates/document.html",
+    "viewer": "templates/viewer.html",
+    "inline": "templates/inline-bundle.html",
+    "css": "rhoe-core.css",
+    "theme": "rhoe-theme-default.css",
+    "javascript": "rhoe-core.js"
+  },
+  "assets": [
+    "rhoe-core.css",
+    "rhoe-theme-default.css",
+    "rhoe-core.js",
+    "templates/document.html",
+    "templates/viewer.html",
+    "templates/inline-bundle.html"
+  ],
+  "dependencies": []
+}

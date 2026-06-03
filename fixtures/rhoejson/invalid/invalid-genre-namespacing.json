@@ -1,0 +1,18 @@
+{
+  "kind": "Artifact",
+  "id": "bad-genre",
+  "title": "Bad Genre",
+  "carrierArchetype": "scrollStream",
+  "genre": "ext/reference-codex",
+  "matter": {
+    "frontMatter": [],
+    "mainMatter": [],
+    "backMatter": []
+  },
+  "compositionGrammarRef": "stream/default",
+  "metadata": {},
+  "attachments": [],
+  "references": [],
+  "projections": [],
+  "transformationHistory": []
+}

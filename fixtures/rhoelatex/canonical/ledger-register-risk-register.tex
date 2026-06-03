@@ -1,0 +1,29 @@
+\documentclass{article}
+\usepackage{../../../reference-packs/rhoeLatexCore/rhoe-core}
+\begin{document}
+\begin{RhoeArtifact}[id={risk-register}, title={Risk Register}, carrier={ledgerRegister}, genre={ext.operationsRegister}, compositionGrammar={ledger/default}]
+\begin{RhoeFrontMatter}
+\begin{RhoeDashboard}
+Current portfolio health.
+\end{RhoeDashboard}
+\end{RhoeFrontMatter}
+\begin{RhoeMainMatter}
+\begin{RhoeSection}[title={Risks}]
+\begin{RhoeCollection}[name={risks}]
+\begin{RhoeSchema}[ref={risk.v1}]
+Risk schema.
+\end{RhoeSchema}
+\begin{RhoeRecord}[id={risk-001}]
+severity: high
+owner: finance
+\end{RhoeRecord}
+\end{RhoeCollection}
+\end{RhoeSection}
+\end{RhoeMainMatter}
+\begin{RhoeBackMatter}
+\begin{RhoeConstraint}
+\RhoeRef[target={risk-001}, mode={full}]
+\end{RhoeConstraint}
+\end{RhoeBackMatter}
+\end{RhoeArtifact}
+\end{document}

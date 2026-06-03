@@ -1,0 +1,43 @@
+\documentclass{article}
+\usepackage{../../../reference-packs/rhoeLatexCore/rhoe-core}
+\begin{document}
+\begin{RhoeArtifact}[id={growth-review}, title={Growth Strategy Review}, carrier={stageFrame}, genre={executiveDecision}, compositionGrammar={executive/default}]
+\begin{RhoeFrontMatter}
+\begin{RhoeFrameSet}[id={opening}]
+\begin{RhoeFrame}[id={opening-1}, shellRole={coverOpener}]
+\begin{RhoeZone}[role={main}]
+Growth Strategy Review
+\end{RhoeZone}
+\end{RhoeFrame}
+\end{RhoeFrameSet}
+\end{RhoeFrontMatter}
+\begin{RhoeMainMatter}
+\begin{RhoeFrameSection}[title={Decision}]
+\begin{RhoeFrameSet}[id={core}]
+\begin{RhoeFrame}[id={decision-1}, shellRole={comparisonOption}, shell={option-comparison}, continuation={continued}]
+\begin{RhoeZone}[role={header}]
+Option B creates the strongest margin expansion with acceptable execution risk.
+\end{RhoeZone}
+\begin{RhoeZone}[role={main}]
+\begin{RhoeTable}[id={decision-table}]
+Option / Margin uplift / Risk
+\end{RhoeTable}
+\end{RhoeZone}
+\begin{RhoeZone}[role={aside}]
+Assumptions: phased migration, pricing uplift, no phase-one headcount reduction.
+\end{RhoeZone}
+\end{RhoeFrame}
+\end{RhoeFrameSet}
+\end{RhoeFrameSection}
+\end{RhoeMainMatter}
+\begin{RhoeBackMatter}
+\begin{RhoeAppendixFrameSet}[id={appendix}]
+\begin{RhoeFrame}[id={appendix-1}, shellRole={appendixSupport}]
+\begin{RhoeZone}[role={main}]
+Appendix evidence and references.
+\end{RhoeZone}
+\end{RhoeFrame}
+\end{RhoeAppendixFrameSet}
+\end{RhoeBackMatter}
+\end{RhoeArtifact}
+\end{document}

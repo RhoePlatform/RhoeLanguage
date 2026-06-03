@@ -1,0 +1,25 @@
+\documentclass{article}
+\usepackage{../../../reference-packs/rhoeLatexCore/rhoe-core}
+\begin{document}
+\begin{RhoeArtifact}[id={planning-sheet}, title={Planning Sheet}, carrier={sheetField}, genre={ext.sheetWorkspace}, compositionGrammar={sheet/default}]
+\begin{RhoeFrontMatter}
+\begin{RhoeTopBand}[title={Header Band}]
+Working assumptions and owner notes.
+\end{RhoeTopBand}
+\end{RhoeFrontMatter}
+\begin{RhoeMainMatter}
+\begin{RhoeSection}[title={Current Plan}]
+\begin{RhoeSheet}[title={Current Plan}]
+\begin{RhoeRegion}[title={Main Workspace}, id={worksheet-main}]
+Primary worksheet region.
+\end{RhoeRegion}
+\end{RhoeSheet}
+\end{RhoeSection}
+\end{RhoeMainMatter}
+\begin{RhoeBackMatter}
+\begin{RhoeBottomBand}[title={Footer Band}]
+\RhoeRef[target={worksheet-main}, mode={full}]
+\end{RhoeBottomBand}
+\end{RhoeBackMatter}
+\end{RhoeArtifact}
+\end{document}

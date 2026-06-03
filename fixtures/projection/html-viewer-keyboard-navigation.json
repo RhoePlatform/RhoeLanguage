@@ -1,0 +1,11 @@
+{
+  "id": "projection.html.viewerKeyboardNavigation",
+  "projectionKind": "html",
+  "sourceFixture": "../rhoehtml/inline/stage-frame-executive-inline.html",
+  "requiredSemantics": [
+    "viewer profile exposes keyboard navigation",
+    "viewer profile exposes home/end and presenter-mode shortcuts",
+    "frame activation does not remove semantic frame identity",
+    "presenter-oriented navigation remains layered on top of semantic DOM"
+  ]
+}

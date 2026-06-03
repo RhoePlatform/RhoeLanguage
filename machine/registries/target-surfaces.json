@@ -1,0 +1,23 @@
+[
+  {
+    "id": "rhoeTypst",
+    "label": "RhoeTypst",
+    "hostLanguage": "Typst",
+    "status": "baseline-stable",
+    "modes": ["external-package", "inline-definitions"]
+  },
+  {
+    "id": "rhoeLatex",
+    "label": "RhoeLaTeX",
+    "hostLanguage": "LaTeX",
+    "status": "baseline-stable",
+    "modes": ["external-package-or-class", "inline-preamble"]
+  },
+  {
+    "id": "rhoeHtml",
+    "label": "RhoeHTML",
+    "hostLanguage": "HTML5",
+    "status": "baseline-stable",
+    "modes": ["linked-assets", "inline-bundle"]
+  }
+]

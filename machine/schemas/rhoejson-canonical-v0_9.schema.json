@@ -1,0 +1,2501 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://rhoe.dev/schemas/rhoejson-canonical-v0_9.schema.json",
+  "title": "RhoeJSON Canonical v0.9.0",
+  "type": "object",
+  "required": [
+    "kind",
+    "id",
+    "title",
+    "carrierArchetype",
+    "genre",
+    "matter",
+    "compositionGrammarRef",
+    "metadata",
+    "attachments",
+    "references",
+    "projections",
+    "transformationHistory"
+  ],
+  "properties": {
+    "kind": {
+      "const": "Artifact"
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "carrierArchetype": {
+      "$ref": "#/$defs/carrierArchetype"
+    },
+    "genre": {
+      "type": "string",
+      "pattern": "^[A-Za-z][A-Za-z0-9]*(\\.[A-Za-z][A-Za-z0-9]*)?$"
+    },
+    "matter": {
+      "$ref": "#/$defs/matterEnvelopeShape"
+    },
+    "compositionGrammarRef": {
+      "type": "string",
+      "minLength": 1
+    },
+    "metadata": {
+      "type": "object"
+    },
+    "brandProfileRef": {
+      "type": "string"
+    },
+    "criticProfileRef": {
+      "type": "string"
+    },
+    "language": {
+      "type": "string"
+    },
+    "audience": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "attachments": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/attachmentRef"
+      }
+    },
+    "references": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/reference"
+      }
+    },
+    "projections": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/projectionRef"
+      }
+    },
+    "transformationHistory": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/transformationRecord"
+      }
+    }
+  },
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "carrierArchetype": {
+            "const": "stageFrame"
+          }
+        },
+        "required": [
+          "carrierArchetype"
+        ]
+      },
+      "then": {
+        "properties": {
+          "matter": {
+            "$ref": "#/$defs/stageMatterEnvelope"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "carrierArchetype": {
+            "const": "codexSpread"
+          }
+        },
+        "required": [
+          "carrierArchetype"
+        ]
+      },
+      "then": {
+        "properties": {
+          "matter": {
+            "$ref": "#/$defs/codexMatterEnvelope"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "carrierArchetype": {
+            "const": "scrollStream"
+          }
+        },
+        "required": [
+          "carrierArchetype"
+        ]
+      },
+      "then": {
+        "properties": {
+          "matter": {
+            "$ref": "#/$defs/scrollMatterEnvelope"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "carrierArchetype": {
+            "const": "tableauPageCollage"
+          }
+        },
+        "required": [
+          "carrierArchetype"
+        ]
+      },
+      "then": {
+        "properties": {
+          "matter": {
+            "$ref": "#/$defs/tableauMatterEnvelope"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "carrierArchetype": {
+            "const": "sheetField"
+          }
+        },
+        "required": [
+          "carrierArchetype"
+        ]
+      },
+      "then": {
+        "properties": {
+          "matter": {
+            "$ref": "#/$defs/sheetMatterEnvelope"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "carrierArchetype": {
+            "const": "ledgerRegister"
+          }
+        },
+        "required": [
+          "carrierArchetype"
+        ]
+      },
+      "then": {
+        "properties": {
+          "matter": {
+            "$ref": "#/$defs/ledgerMatterEnvelope"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "carrierArchetype": {
+            "const": "box"
+          }
+        },
+        "required": [
+          "carrierArchetype"
+        ]
+      },
+      "then": {
+        "properties": {
+          "matter": {
+            "$ref": "#/$defs/boxMatterEnvelope"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "carrierArchetype": {
+            "const": "conversationThread"
+          }
+        },
+        "required": [
+          "carrierArchetype"
+        ]
+      },
+      "then": {
+        "properties": {
+          "matter": {
+            "$ref": "#/$defs/conversationMatterEnvelope"
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "carrierArchetype": {
+      "type": "string",
+      "enum": [
+        "stageFrame",
+        "codexSpread",
+        "scrollStream",
+        "tableauPageCollage",
+        "sheetField",
+        "ledgerRegister",
+        "box",
+        "conversationThread"
+      ]
+    },
+    "matterEnvelopeShape": {
+      "type": "object",
+      "required": [
+        "frontMatter",
+        "mainMatter",
+        "backMatter"
+      ],
+      "properties": {
+        "frontMatter": {
+          "type": "array"
+        },
+        "mainMatter": {
+          "type": "array"
+        },
+        "backMatter": {
+          "type": "array"
+        }
+      },
+      "additionalProperties": false
+    },
+    "stageMatterEnvelope": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/matterEnvelopeShape"
+        },
+        {
+          "properties": {
+            "frontMatter": {
+              "items": {
+                "$ref": "#/$defs/stageMatterNode"
+              }
+            },
+            "mainMatter": {
+              "items": {
+                "$ref": "#/$defs/stageMatterNode"
+              }
+            },
+            "backMatter": {
+              "items": {
+                "$ref": "#/$defs/stageMatterNode"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "codexMatterEnvelope": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/matterEnvelopeShape"
+        },
+        {
+          "properties": {
+            "frontMatter": {
+              "items": {
+                "$ref": "#/$defs/codexMatterNode"
+              }
+            },
+            "mainMatter": {
+              "items": {
+                "$ref": "#/$defs/codexMatterNode"
+              }
+            },
+            "backMatter": {
+              "items": {
+                "$ref": "#/$defs/codexMatterNode"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "scrollMatterEnvelope": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/matterEnvelopeShape"
+        },
+        {
+          "properties": {
+            "frontMatter": {
+              "items": {
+                "$ref": "#/$defs/scrollMatterNode"
+              }
+            },
+            "mainMatter": {
+              "items": {
+                "$ref": "#/$defs/scrollMatterNode"
+              }
+            },
+            "backMatter": {
+              "items": {
+                "$ref": "#/$defs/scrollMatterNode"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "tableauMatterEnvelope": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/matterEnvelopeShape"
+        },
+        {
+          "properties": {
+            "frontMatter": {
+              "items": {
+                "$ref": "#/$defs/tableauMatterNode"
+              }
+            },
+            "mainMatter": {
+              "items": {
+                "$ref": "#/$defs/tableauMatterNode"
+              }
+            },
+            "backMatter": {
+              "items": {
+                "$ref": "#/$defs/tableauMatterNode"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "sheetMatterEnvelope": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/matterEnvelopeShape"
+        },
+        {
+          "properties": {
+            "frontMatter": {
+              "items": {
+                "$ref": "#/$defs/sheetMatterNode"
+              }
+            },
+            "mainMatter": {
+              "items": {
+                "$ref": "#/$defs/sheetMatterNode"
+              }
+            },
+            "backMatter": {
+              "items": {
+                "$ref": "#/$defs/sheetMatterNode"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "ledgerMatterEnvelope": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/matterEnvelopeShape"
+        },
+        {
+          "properties": {
+            "frontMatter": {
+              "items": {
+                "$ref": "#/$defs/ledgerMatterNode"
+              }
+            },
+            "mainMatter": {
+              "items": {
+                "$ref": "#/$defs/ledgerMatterNode"
+              }
+            },
+            "backMatter": {
+              "items": {
+                "$ref": "#/$defs/ledgerMatterNode"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "boxMatterEnvelope": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/matterEnvelopeShape"
+        },
+        {
+          "properties": {
+            "frontMatter": {
+              "items": {
+                "$ref": "#/$defs/boxMatterNode"
+              }
+            },
+            "mainMatter": {
+              "items": {
+                "$ref": "#/$defs/boxMatterNode"
+              }
+            },
+            "backMatter": {
+              "items": {
+                "$ref": "#/$defs/boxMatterNode"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "conversationMatterEnvelope": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/matterEnvelopeShape"
+        },
+        {
+          "properties": {
+            "frontMatter": {
+              "items": {
+                "$ref": "#/$defs/conversationMatterNode"
+              }
+            },
+            "mainMatter": {
+              "items": {
+                "$ref": "#/$defs/conversationMatterNode"
+              }
+            },
+            "backMatter": {
+              "items": {
+                "$ref": "#/$defs/conversationMatterNode"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "matterNode": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/stageMatterNode"
+        },
+        {
+          "$ref": "#/$defs/codexMatterNode"
+        },
+        {
+          "$ref": "#/$defs/scrollMatterNode"
+        },
+        {
+          "$ref": "#/$defs/tableauMatterNode"
+        },
+        {
+          "$ref": "#/$defs/sheetMatterNode"
+        },
+        {
+          "$ref": "#/$defs/ledgerMatterNode"
+        },
+        {
+          "$ref": "#/$defs/boxMatterNode"
+        },
+        {
+          "$ref": "#/$defs/conversationMatterNode"
+        }
+      ]
+    },
+    "nodeOrContent": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/matterNode"
+        },
+        {
+          "$ref": "#/$defs/genericNode"
+        }
+      ]
+    },
+    "sectionNodeBase": {
+      "type": "object",
+      "required": [
+        "kind",
+        "children"
+      ],
+      "properties": {
+        "kind": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "children": {
+          "type": "array"
+        }
+      },
+      "additionalProperties": true
+    },
+    "carrierContainerNode": {
+      "type": "object",
+      "required": [
+        "kind",
+        "children"
+      ],
+      "properties": {
+        "kind": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "children": {
+          "type": "array"
+        }
+      },
+      "additionalProperties": true
+    },
+    "codexNodeOrContent": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/codexMatterNode"
+        },
+        {
+          "$ref": "#/$defs/genericNode"
+        }
+      ]
+    },
+    "scrollNodeOrContent": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/scrollMatterNode"
+        },
+        {
+          "$ref": "#/$defs/genericNode"
+        }
+      ]
+    },
+    "tableauNodeOrContent": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/tableauMatterNode"
+        },
+        {
+          "$ref": "#/$defs/genericNode"
+        }
+      ]
+    },
+    "sheetNodeOrContent": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/sheetMatterNode"
+        },
+        {
+          "$ref": "#/$defs/genericNode"
+        }
+      ]
+    },
+    "ledgerNodeOrContent": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/ledgerMatterNode"
+        },
+        {
+          "$ref": "#/$defs/genericNode"
+        }
+      ]
+    },
+    "boxNodeOrContent": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/boxMatterNode"
+        },
+        {
+          "$ref": "#/$defs/genericNode"
+        }
+      ]
+    },
+    "conversationNodeOrContent": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/conversationMatterNode"
+        },
+        {
+          "$ref": "#/$defs/genericNode"
+        }
+      ]
+    },
+    "codexContainerNode": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/carrierContainerNode"
+        },
+        {
+          "properties": {
+            "children": {
+              "items": {
+                "$ref": "#/$defs/codexNodeOrContent"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "scrollContainerNode": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/carrierContainerNode"
+        },
+        {
+          "properties": {
+            "children": {
+              "items": {
+                "$ref": "#/$defs/scrollNodeOrContent"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "tableauContainerNode": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/carrierContainerNode"
+        },
+        {
+          "properties": {
+            "children": {
+              "items": {
+                "$ref": "#/$defs/tableauNodeOrContent"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "sheetContainerNode": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/carrierContainerNode"
+        },
+        {
+          "properties": {
+            "children": {
+              "items": {
+                "$ref": "#/$defs/sheetNodeOrContent"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "ledgerContainerNode": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/carrierContainerNode"
+        },
+        {
+          "properties": {
+            "children": {
+              "items": {
+                "$ref": "#/$defs/ledgerNodeOrContent"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "boxContainerNode": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/carrierContainerNode"
+        },
+        {
+          "properties": {
+            "children": {
+              "items": {
+                "$ref": "#/$defs/boxNodeOrContent"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "conversationContainerNode": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/carrierContainerNode"
+        },
+        {
+          "properties": {
+            "children": {
+              "items": {
+                "$ref": "#/$defs/conversationNodeOrContent"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "stageSectionNode": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/sectionNodeBase"
+        },
+        {
+          "properties": {
+            "kind": {
+              "const": "Section"
+            },
+            "children": {
+              "items": {
+                "$ref": "#/$defs/stageMatterNode"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "stageSubsectionNode": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/sectionNodeBase"
+        },
+        {
+          "properties": {
+            "kind": {
+              "const": "Subsection"
+            },
+            "children": {
+              "items": {
+                "$ref": "#/$defs/stageMatterNode"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "stageSubSubsectionNode": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/sectionNodeBase"
+        },
+        {
+          "properties": {
+            "kind": {
+              "const": "SubSubsection"
+            },
+            "children": {
+              "items": {
+                "$ref": "#/$defs/stageMatterNode"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "frameSectionNode": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/sectionNodeBase"
+        },
+        {
+          "properties": {
+            "kind": {
+              "const": "FrameSection"
+            },
+            "children": {
+              "items": {
+                "$ref": "#/$defs/stageMatterNode"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "frameSetNode": {
+      "type": "object",
+      "required": [
+        "kind",
+        "frames"
+      ],
+      "properties": {
+        "kind": {
+          "enum": [
+            "FrameSet",
+            "AppendixFrameSet"
+          ]
+        },
+        "id": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "aspectRatio": {
+          "type": "string"
+        },
+        "frames": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/frameNode"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "frameNode": {
+      "type": "object",
+      "required": [
+        "kind",
+        "zones"
+      ],
+      "properties": {
+        "kind": {
+          "const": "Frame"
+        },
+        "id": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "shell": {
+          "$ref": "#/$defs/stageShellBinding"
+        },
+        "zones": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/stageZone"
+          }
+        },
+        "presenterNotes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/genericNode"
+          }
+        },
+        "continuationPolicy": {
+          "type": "object"
+        },
+        "diagnostics": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "stageMatterNode": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/stageSectionNode"
+        },
+        {
+          "$ref": "#/$defs/stageSubsectionNode"
+        },
+        {
+          "$ref": "#/$defs/stageSubSubsectionNode"
+        },
+        {
+          "$ref": "#/$defs/frameSectionNode"
+        },
+        {
+          "$ref": "#/$defs/frameSetNode"
+        },
+        {
+          "$ref": "#/$defs/frameNode"
+        }
+      ]
+    },
+    "codexSectionNode": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/sectionNodeBase"
+        },
+        {
+          "properties": {
+            "kind": {
+              "const": "Section"
+            },
+            "children": {
+              "items": {
+                "$ref": "#/$defs/codexMatterNode"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "codexSubsectionNode": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/sectionNodeBase"
+        },
+        {
+          "properties": {
+            "kind": {
+              "const": "Subsection"
+            },
+            "children": {
+              "items": {
+                "$ref": "#/$defs/codexMatterNode"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "codexSubSubsectionNode": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/sectionNodeBase"
+        },
+        {
+          "properties": {
+            "kind": {
+              "const": "SubSubsection"
+            },
+            "children": {
+              "items": {
+                "$ref": "#/$defs/codexMatterNode"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "codexNode": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/codexContainerNode"
+        },
+        {
+          "properties": {
+            "kind": {
+              "const": "Codex"
+            }
+          }
+        }
+      ]
+    },
+    "chapterNode": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/codexContainerNode"
+        },
+        {
+          "properties": {
+            "kind": {
+              "const": "Chapter"
+            }
+          }
+        }
+      ]
+    },
+    "spreadNode": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/codexContainerNode"
+        },
+        {
+          "properties": {
+            "kind": {
+              "const": "Spread"
+            }
+          }
+        }
+      ]
+    },
+    "appendixNode": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/codexContainerNode"
+        },
+        {
+          "properties": {
+            "kind": {
+              "const": "Appendix"
+            }
+          }
+        }
+      ]
+    },
+    "referenceApparatusNode": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/codexContainerNode"
+        },
+        {
+          "properties": {
+            "kind": {
+              "const": "ReferenceApparatus"
+            }
+          }
+        }
+      ]
+    },
+    "codexMatterNode": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/codexSectionNode"
+        },
+        {
+          "$ref": "#/$defs/codexSubsectionNode"
+        },
+        {
+          "$ref": "#/$defs/codexSubSubsectionNode"
+        },
+        {
+          "$ref": "#/$defs/codexNode"
+        },
+        {
+          "$ref": "#/$defs/chapterNode"
+        },
+        {
+          "$ref": "#/$defs/spreadNode"
+        },
+        {
+          "$ref": "#/$defs/appendixNode"
+        },
+        {
+          "$ref": "#/$defs/referenceApparatusNode"
+        }
+      ]
+    },
+    "scrollSectionNode": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/sectionNodeBase"
+        },
+        {
+          "properties": {
+            "kind": {
+              "const": "Section"
+            },
+            "children": {
+              "items": {
+                "$ref": "#/$defs/scrollMatterNode"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "scrollSubsectionNode": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/sectionNodeBase"
+        },
+        {
+          "properties": {
+            "kind": {
+              "const": "Subsection"
+            },
+            "children": {
+              "items": {
+                "$ref": "#/$defs/scrollMatterNode"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "scrollSubSubsectionNode": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/sectionNodeBase"
+        },
+        {
+          "properties": {
+            "kind": {
+              "const": "SubSubsection"
+            },
+            "children": {
+              "items": {
+                "$ref": "#/$defs/scrollMatterNode"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "streamNode": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/scrollContainerNode"
+        },
+        {
+          "properties": {
+            "kind": {
+              "const": "Stream"
+            }
+          }
+        }
+      ]
+    },
+    "fileSegmentNode": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/scrollContainerNode"
+        },
+        {
+          "properties": {
+            "kind": {
+              "const": "FileSegment"
+            }
+          }
+        }
+      ]
+    },
+    "anchorNode": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/scrollContainerNode"
+        },
+        {
+          "properties": {
+            "kind": {
+              "const": "Anchor"
+            }
+          }
+        }
+      ]
+    },
+    "supportMatterNode": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/scrollContainerNode"
+        },
+        {
+          "properties": {
+            "kind": {
+              "const": "SupportMatter"
+            }
+          }
+        }
+      ]
+    },
+    "jumpNode": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/scrollContainerNode"
+        },
+        {
+          "properties": {
+            "kind": {
+              "const": "Jump"
+            }
+          }
+        }
+      ]
+    },
+    "scrollMatterNode": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/scrollSectionNode"
+        },
+        {
+          "$ref": "#/$defs/scrollSubsectionNode"
+        },
+        {
+          "$ref": "#/$defs/scrollSubSubsectionNode"
+        },
+        {
+          "$ref": "#/$defs/streamNode"
+        },
+        {
+          "$ref": "#/$defs/fileSegmentNode"
+        },
+        {
+          "$ref": "#/$defs/anchorNode"
+        },
+        {
+          "$ref": "#/$defs/supportMatterNode"
+        },
+        {
+          "$ref": "#/$defs/jumpNode"
+        }
+      ]
+    },
+    "tableauSectionNode": {
+      "allOf": [
+        {
+          "properties": {
+            "kind": {
+              "const": "Section"
+            },
+            "children": {
+              "items": {
+                "$ref": "#/$defs/tableauMatterNode"
+              }
+            }
+          }
+        },
+        {
+          "$ref": "#/$defs/sectionNodeBase"
+        }
+      ]
+    },
+    "tableauSubsectionNode": {
+      "allOf": [
+        {
+          "properties": {
+            "kind": {
+              "const": "Subsection"
+            },
+            "children": {
+              "items": {
+                "$ref": "#/$defs/tableauMatterNode"
+              }
+            }
+          }
+        },
+        {
+          "$ref": "#/$defs/sectionNodeBase"
+        }
+      ]
+    },
+    "tableauSubSubsectionNode": {
+      "allOf": [
+        {
+          "properties": {
+            "kind": {
+              "const": "SubSubsection"
+            },
+            "children": {
+              "items": {
+                "$ref": "#/$defs/tableauMatterNode"
+              }
+            }
+          }
+        },
+        {
+          "$ref": "#/$defs/sectionNodeBase"
+        }
+      ]
+    },
+    "tableauDocumentNode": {
+      "allOf": [
+        {
+          "properties": {
+            "kind": {
+              "const": "TableauDocument"
+            }
+          }
+        },
+        {
+          "$ref": "#/$defs/tableauContainerNode"
+        }
+      ]
+    },
+    "pageFamilyNode": {
+      "allOf": [
+        {
+          "properties": {
+            "kind": {
+              "const": "PageFamily"
+            }
+          }
+        },
+        {
+          "$ref": "#/$defs/tableauContainerNode"
+        }
+      ]
+    },
+    "tableauPageNode": {
+      "allOf": [
+        {
+          "properties": {
+            "kind": {
+              "const": "TableauPage"
+            }
+          }
+        },
+        {
+          "$ref": "#/$defs/tableauContainerNode"
+        }
+      ]
+    },
+    "regionGroupNode": {
+      "allOf": [
+        {
+          "properties": {
+            "kind": {
+              "const": "RegionGroup"
+            }
+          }
+        },
+        {
+          "$ref": "#/$defs/tableauContainerNode"
+        }
+      ]
+    },
+    "heroRegionNode": {
+      "allOf": [
+        {
+          "properties": {
+            "kind": {
+              "const": "HeroRegion"
+            }
+          }
+        },
+        {
+          "$ref": "#/$defs/tableauContainerNode"
+        }
+      ]
+    },
+    "supportRegionNode": {
+      "allOf": [
+        {
+          "properties": {
+            "kind": {
+              "const": "SupportRegion"
+            }
+          }
+        },
+        {
+          "$ref": "#/$defs/tableauContainerNode"
+        }
+      ]
+    },
+    "tableauMatterNode": {
+      "type": "object",
+      "required": [
+        "kind"
+      ],
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "Section"
+              }
+            },
+            "required": [
+              "kind"
+            ]
+          },
+          "then": {
+            "$ref": "#/$defs/tableauSectionNode"
+          },
+          "else": {
+            "if": {
+              "properties": {
+                "kind": {
+                  "const": "Subsection"
+                }
+              },
+              "required": [
+                "kind"
+              ]
+            },
+            "then": {
+              "$ref": "#/$defs/tableauSubsectionNode"
+            },
+            "else": {
+              "if": {
+                "properties": {
+                  "kind": {
+                    "const": "SubSubsection"
+                  }
+                },
+                "required": [
+                  "kind"
+                ]
+              },
+              "then": {
+                "$ref": "#/$defs/tableauSubSubsectionNode"
+              },
+              "else": {
+                "if": {
+                  "properties": {
+                    "kind": {
+                      "const": "TableauDocument"
+                    }
+                  },
+                  "required": [
+                    "kind"
+                  ]
+                },
+                "then": {
+                  "$ref": "#/$defs/tableauDocumentNode"
+                },
+                "else": {
+                  "if": {
+                    "properties": {
+                      "kind": {
+                        "const": "PageFamily"
+                      }
+                    },
+                    "required": [
+                      "kind"
+                    ]
+                  },
+                  "then": {
+                    "$ref": "#/$defs/pageFamilyNode"
+                  },
+                  "else": {
+                    "if": {
+                      "properties": {
+                        "kind": {
+                          "const": "TableauPage"
+                        }
+                      },
+                      "required": [
+                        "kind"
+                      ]
+                    },
+                    "then": {
+                      "$ref": "#/$defs/tableauPageNode"
+                    },
+                    "else": {
+                      "if": {
+                        "properties": {
+                          "kind": {
+                            "const": "RegionGroup"
+                          }
+                        },
+                        "required": [
+                          "kind"
+                        ]
+                      },
+                      "then": {
+                        "$ref": "#/$defs/regionGroupNode"
+                      },
+                      "else": {
+                        "if": {
+                          "properties": {
+                            "kind": {
+                              "const": "HeroRegion"
+                            }
+                          },
+                          "required": [
+                            "kind"
+                          ]
+                        },
+                        "then": {
+                          "$ref": "#/$defs/heroRegionNode"
+                        },
+                        "else": {
+                          "if": {
+                            "properties": {
+                              "kind": {
+                                "const": "SupportRegion"
+                              }
+                            },
+                            "required": [
+                              "kind"
+                            ]
+                          },
+                          "then": {
+                            "$ref": "#/$defs/supportRegionNode"
+                          },
+                          "else": false
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "sheetSectionNode": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/sectionNodeBase"
+        },
+        {
+          "properties": {
+            "kind": {
+              "const": "Section"
+            },
+            "children": {
+              "items": {
+                "$ref": "#/$defs/sheetMatterNode"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "sheetSubsectionNode": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/sectionNodeBase"
+        },
+        {
+          "properties": {
+            "kind": {
+              "const": "Subsection"
+            },
+            "children": {
+              "items": {
+                "$ref": "#/$defs/sheetMatterNode"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "sheetSubSubsectionNode": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/sectionNodeBase"
+        },
+        {
+          "properties": {
+            "kind": {
+              "const": "SubSubsection"
+            },
+            "children": {
+              "items": {
+                "$ref": "#/$defs/sheetMatterNode"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "fieldDocumentNode": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/sheetContainerNode"
+        },
+        {
+          "properties": {
+            "kind": {
+              "const": "FieldDocument"
+            }
+          }
+        }
+      ]
+    },
+    "sheetNode": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/sheetContainerNode"
+        },
+        {
+          "properties": {
+            "kind": {
+              "const": "Sheet"
+            }
+          }
+        }
+      ]
+    },
+    "perimeterNode": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/sheetContainerNode"
+        },
+        {
+          "properties": {
+            "kind": {
+              "const": "Perimeter"
+            }
+          }
+        }
+      ]
+    },
+    "topBandNode": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/sheetContainerNode"
+        },
+        {
+          "properties": {
+            "kind": {
+              "const": "TopBand"
+            }
+          }
+        }
+      ]
+    },
+    "bottomBandNode": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/sheetContainerNode"
+        },
+        {
+          "properties": {
+            "kind": {
+              "const": "BottomBand"
+            }
+          }
+        }
+      ]
+    },
+    "sideBandNode": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/sheetContainerNode"
+        },
+        {
+          "properties": {
+            "kind": {
+              "const": "SideBand"
+            }
+          }
+        }
+      ]
+    },
+    "regionNode": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/sheetContainerNode"
+        },
+        {
+          "properties": {
+            "kind": {
+              "const": "Region"
+            }
+          }
+        }
+      ]
+    },
+    "sheetMatterNode": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/sheetSectionNode"
+        },
+        {
+          "$ref": "#/$defs/sheetSubsectionNode"
+        },
+        {
+          "$ref": "#/$defs/sheetSubSubsectionNode"
+        },
+        {
+          "$ref": "#/$defs/fieldDocumentNode"
+        },
+        {
+          "$ref": "#/$defs/sheetNode"
+        },
+        {
+          "$ref": "#/$defs/perimeterNode"
+        },
+        {
+          "$ref": "#/$defs/topBandNode"
+        },
+        {
+          "$ref": "#/$defs/bottomBandNode"
+        },
+        {
+          "$ref": "#/$defs/sideBandNode"
+        },
+        {
+          "$ref": "#/$defs/regionNode"
+        }
+      ]
+    },
+    "ledgerSectionNode": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/sectionNodeBase"
+        },
+        {
+          "properties": {
+            "kind": {
+              "const": "Section"
+            },
+            "children": {
+              "items": {
+                "$ref": "#/$defs/ledgerMatterNode"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "ledgerSubsectionNode": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/sectionNodeBase"
+        },
+        {
+          "properties": {
+            "kind": {
+              "const": "Subsection"
+            },
+            "children": {
+              "items": {
+                "$ref": "#/$defs/ledgerMatterNode"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "ledgerSubSubsectionNode": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/sectionNodeBase"
+        },
+        {
+          "properties": {
+            "kind": {
+              "const": "SubSubsection"
+            },
+            "children": {
+              "items": {
+                "$ref": "#/$defs/ledgerMatterNode"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "registerNode": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/ledgerContainerNode"
+        },
+        {
+          "properties": {
+            "kind": {
+              "const": "Register"
+            }
+          }
+        }
+      ]
+    },
+    "collectionNode": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/ledgerContainerNode"
+        },
+        {
+          "properties": {
+            "kind": {
+              "const": "Collection"
+            }
+          }
+        }
+      ]
+    },
+    "schemaNode": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/ledgerContainerNode"
+        },
+        {
+          "properties": {
+            "kind": {
+              "const": "Schema"
+            }
+          }
+        }
+      ]
+    },
+    "recordNode": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/ledgerContainerNode"
+        },
+        {
+          "properties": {
+            "kind": {
+              "const": "Record"
+            }
+          }
+        }
+      ]
+    },
+    "formNode": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/ledgerContainerNode"
+        },
+        {
+          "properties": {
+            "kind": {
+              "const": "Form"
+            }
+          }
+        }
+      ]
+    },
+    "dashboardNode": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/ledgerContainerNode"
+        },
+        {
+          "properties": {
+            "kind": {
+              "const": "Dashboard"
+            }
+          }
+        }
+      ]
+    },
+    "constraintNode": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/ledgerContainerNode"
+        },
+        {
+          "properties": {
+            "kind": {
+              "const": "Constraint"
+            }
+          }
+        }
+      ]
+    },
+    "ledgerMatterNode": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/ledgerSectionNode"
+        },
+        {
+          "$ref": "#/$defs/ledgerSubsectionNode"
+        },
+        {
+          "$ref": "#/$defs/ledgerSubSubsectionNode"
+        },
+        {
+          "$ref": "#/$defs/registerNode"
+        },
+        {
+          "$ref": "#/$defs/collectionNode"
+        },
+        {
+          "$ref": "#/$defs/schemaNode"
+        },
+        {
+          "$ref": "#/$defs/recordNode"
+        },
+        {
+          "$ref": "#/$defs/formNode"
+        },
+        {
+          "$ref": "#/$defs/dashboardNode"
+        },
+        {
+          "$ref": "#/$defs/constraintNode"
+        }
+      ]
+    },
+    "boxSectionNode": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/sectionNodeBase"
+        },
+        {
+          "properties": {
+            "kind": {
+              "const": "Section"
+            },
+            "children": {
+              "items": {
+                "$ref": "#/$defs/boxMatterNode"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "boxSubsectionNode": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/sectionNodeBase"
+        },
+        {
+          "properties": {
+            "kind": {
+              "const": "Subsection"
+            },
+            "children": {
+              "items": {
+                "$ref": "#/$defs/boxMatterNode"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "boxSubSubsectionNode": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/sectionNodeBase"
+        },
+        {
+          "properties": {
+            "kind": {
+              "const": "SubSubsection"
+            },
+            "children": {
+              "items": {
+                "$ref": "#/$defs/boxMatterNode"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "boxNode": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/boxContainerNode"
+        },
+        {
+          "properties": {
+            "kind": {
+              "const": "Box"
+            }
+          }
+        }
+      ]
+    },
+    "tagCatalogNode": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/boxContainerNode"
+        },
+        {
+          "properties": {
+            "kind": {
+              "const": "TagCatalog"
+            }
+          }
+        }
+      ]
+    },
+    "fragmentNode": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/boxContainerNode"
+        },
+        {
+          "properties": {
+            "kind": {
+              "const": "Fragment"
+            }
+          }
+        }
+      ]
+    },
+    "subcollectionNode": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/boxContainerNode"
+        },
+        {
+          "properties": {
+            "kind": {
+              "const": "Subcollection"
+            }
+          }
+        }
+      ]
+    },
+    "clusterNode": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/boxContainerNode"
+        },
+        {
+          "properties": {
+            "kind": {
+              "const": "Cluster"
+            }
+          }
+        }
+      ]
+    },
+    "savedViewNode": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/boxContainerNode"
+        },
+        {
+          "properties": {
+            "kind": {
+              "const": "SavedView"
+            }
+          }
+        }
+      ]
+    },
+    "boxMatterNode": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/boxSectionNode"
+        },
+        {
+          "$ref": "#/$defs/boxSubsectionNode"
+        },
+        {
+          "$ref": "#/$defs/boxSubSubsectionNode"
+        },
+        {
+          "$ref": "#/$defs/boxNode"
+        },
+        {
+          "$ref": "#/$defs/tagCatalogNode"
+        },
+        {
+          "$ref": "#/$defs/fragmentNode"
+        },
+        {
+          "$ref": "#/$defs/subcollectionNode"
+        },
+        {
+          "$ref": "#/$defs/clusterNode"
+        },
+        {
+          "$ref": "#/$defs/savedViewNode"
+        }
+      ]
+    },
+    "conversationSectionNode": {
+      "allOf": [
+        {
+          "properties": {
+            "kind": {
+              "const": "Section"
+            },
+            "children": {
+              "items": {
+                "$ref": "#/$defs/conversationMatterNode"
+              }
+            }
+          }
+        },
+        {
+          "$ref": "#/$defs/sectionNodeBase"
+        }
+      ]
+    },
+    "conversationSubsectionNode": {
+      "allOf": [
+        {
+          "properties": {
+            "kind": {
+              "const": "Subsection"
+            },
+            "children": {
+              "items": {
+                "$ref": "#/$defs/conversationMatterNode"
+              }
+            }
+          }
+        },
+        {
+          "$ref": "#/$defs/sectionNodeBase"
+        }
+      ]
+    },
+    "conversationSubSubsectionNode": {
+      "allOf": [
+        {
+          "properties": {
+            "kind": {
+              "const": "SubSubsection"
+            },
+            "children": {
+              "items": {
+                "$ref": "#/$defs/conversationMatterNode"
+              }
+            }
+          }
+        },
+        {
+          "$ref": "#/$defs/sectionNodeBase"
+        }
+      ]
+    },
+    "threadNode": {
+      "allOf": [
+        {
+          "properties": {
+            "kind": {
+              "const": "Thread"
+            }
+          }
+        },
+        {
+          "$ref": "#/$defs/conversationContainerNode"
+        }
+      ]
+    },
+    "participantProfileNode": {
+      "allOf": [
+        {
+          "properties": {
+            "kind": {
+              "const": "ParticipantProfile"
+            }
+          }
+        },
+        {
+          "$ref": "#/$defs/conversationContainerNode"
+        }
+      ]
+    },
+    "topicBriefingNode": {
+      "allOf": [
+        {
+          "properties": {
+            "kind": {
+              "const": "TopicBriefing"
+            }
+          }
+        },
+        {
+          "$ref": "#/$defs/conversationContainerNode"
+        }
+      ]
+    },
+    "conductDoctrineNode": {
+      "allOf": [
+        {
+          "properties": {
+            "kind": {
+              "const": "ConductDoctrine"
+            }
+          }
+        },
+        {
+          "$ref": "#/$defs/conversationContainerNode"
+        }
+      ]
+    },
+    "episodeNode": {
+      "allOf": [
+        {
+          "properties": {
+            "kind": {
+              "const": "Episode"
+            }
+          }
+        },
+        {
+          "$ref": "#/$defs/conversationContainerNode"
+        }
+      ]
+    },
+    "branchNode": {
+      "allOf": [
+        {
+          "properties": {
+            "kind": {
+              "const": "Branch"
+            }
+          }
+        },
+        {
+          "$ref": "#/$defs/conversationContainerNode"
+        }
+      ]
+    },
+    "turnNode": {
+      "allOf": [
+        {
+          "properties": {
+            "kind": {
+              "const": "Turn"
+            }
+          }
+        },
+        {
+          "$ref": "#/$defs/conversationContainerNode"
+        }
+      ]
+    },
+    "conversationAttachmentNode": {
+      "allOf": [
+        {
+          "properties": {
+            "kind": {
+              "const": "AttachmentRef"
+            }
+          }
+        },
+        {
+          "$ref": "#/$defs/conversationContainerNode"
+        }
+      ]
+    },
+    "outcomeNode": {
+      "allOf": [
+        {
+          "properties": {
+            "kind": {
+              "const": "Outcome"
+            }
+          }
+        },
+        {
+          "$ref": "#/$defs/conversationContainerNode"
+        }
+      ]
+    },
+    "conversationMatterNode": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/conversationSectionNode"
+        },
+        {
+          "$ref": "#/$defs/conversationSubsectionNode"
+        },
+        {
+          "$ref": "#/$defs/conversationSubSubsectionNode"
+        },
+        {
+          "$ref": "#/$defs/threadNode"
+        },
+        {
+          "$ref": "#/$defs/participantProfileNode"
+        },
+        {
+          "$ref": "#/$defs/topicBriefingNode"
+        },
+        {
+          "$ref": "#/$defs/conductDoctrineNode"
+        },
+        {
+          "$ref": "#/$defs/episodeNode"
+        },
+        {
+          "$ref": "#/$defs/branchNode"
+        },
+        {
+          "$ref": "#/$defs/turnNode"
+        },
+        {
+          "$ref": "#/$defs/conversationAttachmentNode"
+        },
+        {
+          "$ref": "#/$defs/outcomeNode"
+        }
+      ]
+    },
+    "stageShellBinding": {
+      "type": "object",
+      "required": [
+        "shellPackRef",
+        "shellRole"
+      ],
+      "properties": {
+        "shellPackRef": {
+          "type": "string"
+        },
+        "shellRole": {
+          "type": "string"
+        },
+        "shellArchetypeRef": {
+          "type": "string"
+        },
+        "requiredZones": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/stageZoneType"
+          }
+        },
+        "allowedZones": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/stageZoneType"
+          }
+        },
+        "forbiddenZones": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/stageZoneType"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "stageZoneType": {
+      "type": "string",
+      "enum": [
+        "header",
+        "main",
+        "aside",
+        "footer",
+        "background",
+        "overlay",
+        "label",
+        "badge",
+        "payload"
+      ]
+    },
+    "stageZone": {
+      "type": "object",
+      "required": [
+        "zoneType",
+        "children"
+      ],
+      "properties": {
+        "zoneType": {
+          "$ref": "#/$defs/stageZoneType"
+        },
+        "semanticRole": {
+          "type": "string"
+        },
+        "children": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/genericNode"
+          }
+        },
+        "layoutHints": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "payloadBinding": {
+          "type": "object"
+        }
+      },
+      "additionalProperties": true
+    },
+    "genericNode": {
+      "type": "object",
+      "required": [
+        "kind"
+      ],
+      "properties": {
+        "kind": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "allOf": [
+        {
+          "not": {
+            "properties": {
+              "kind": {
+                "enum": [
+                  "Section",
+                  "Subsection",
+                  "SubSubsection",
+                  "FrameSection",
+                  "FrameSet",
+                  "AppendixFrameSet",
+                  "Frame",
+                  "Codex",
+                  "Chapter",
+                  "Spread",
+                  "Appendix",
+                  "ReferenceApparatus",
+                  "Stream",
+                  "FileSegment",
+                  "Anchor",
+                  "SupportMatter",
+                  "Jump",
+                  "TableauDocument",
+                  "PageFamily",
+                  "TableauPage",
+                  "RegionGroup",
+                  "HeroRegion",
+                  "SupportRegion",
+                  "FieldDocument",
+                  "Sheet",
+                  "Perimeter",
+                  "TopBand",
+                  "BottomBand",
+                  "SideBand",
+                  "Region",
+                  "Register",
+                  "Collection",
+                  "Schema",
+                  "Record",
+                  "Form",
+                  "Dashboard",
+                  "Constraint",
+                  "Box",
+                  "TagCatalog",
+                  "Fragment",
+                  "Subcollection",
+                  "Cluster",
+                  "SavedView",
+                  "Thread",
+                  "ParticipantProfile",
+                  "TopicBriefing",
+                  "ConductDoctrine",
+                  "Episode",
+                  "Branch",
+                  "Turn",
+                  "AttachmentRef",
+                  "Outcome"
+                ]
+              }
+            },
+            "required": [
+              "kind"
+            ]
+          }
+        }
+      ],
+      "additionalProperties": true
+    },
+    "attachmentRef": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "href": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "reference": {
+      "type": "object",
+      "properties": {
+        "target": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "projectionRef": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "type": "string"
+        },
+        "target": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "transformationRecord": {
+      "type": "object",
+      "properties": {
+        "phase": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    }
+  }
+}

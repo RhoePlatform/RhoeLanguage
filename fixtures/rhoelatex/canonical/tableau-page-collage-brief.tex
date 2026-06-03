@@ -1,0 +1,37 @@
+\documentclass{article}
+\usepackage{../../../reference-packs/rhoeLatexCore/rhoe-core}
+\begin{document}
+\begin{RhoeArtifact}[id={campaign-brief}, title={Campaign Brief}, carrier={tableauPageCollage}, genre={ext.tableauBrief}, compositionGrammar={tableau/default}]
+\begin{RhoeFrontMatter}
+\begin{RhoePageFamily}[title={Cover Family}]
+\begin{RhoeTableauPage}[title={Cover}]
+\begin{RhoeHeroRegion}
+Campaign brief opener.
+\end{RhoeHeroRegion}
+\end{RhoeTableauPage}
+\end{RhoePageFamily}
+\end{RhoeFrontMatter}
+\begin{RhoeMainMatter}
+\begin{RhoeSection}[title={Analysis}]
+\begin{RhoePageFamily}[title={Core Pages}]
+\begin{RhoeTableauPage}[title={Analysis}, id={analysis-page}]
+\begin{RhoeRegionGroup}
+\begin{RhoeSupportRegion}
+Supporting findings.
+\end{RhoeSupportRegion}
+\end{RhoeRegionGroup}
+\end{RhoeTableauPage}
+\end{RhoePageFamily}
+\end{RhoeSection}
+\end{RhoeMainMatter}
+\begin{RhoeBackMatter}
+\begin{RhoePageFamily}[title={Closing Family}]
+\begin{RhoeTableauPage}[title={Credits}]
+\begin{RhoeSupportRegion}
+\RhoeRef[target={analysis-page}, mode={full}]
+\end{RhoeSupportRegion}
+\end{RhoeTableauPage}
+\end{RhoePageFamily}
+\end{RhoeBackMatter}
+\end{RhoeArtifact}
+\end{document}

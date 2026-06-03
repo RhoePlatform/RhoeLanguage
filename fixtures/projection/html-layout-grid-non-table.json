@@ -1,0 +1,10 @@
+{
+  "id": "projection.html.layoutGridNonTable",
+  "projectionKind": "html",
+  "sourceFixture": "../rhoejson/valid/tableau-page-collage-brief.json",
+  "requiredSemantics": [
+    "layout-oriented regions are not emitted as data tables",
+    "layout grouping remains semantically distinct from tabular data",
+    "assistive interpretation does not expose layout regions as table cells"
+  ]
+}

@@ -1,0 +1,14 @@
+:root {
+  --rhoe-color-accent-strong: #18323f;
+  --rhoe-color-surface-muted: #f4efe5;
+}
+
+.rhoe-frame {
+  border: 1px solid var(--rhoe-color-border);
+  border-radius: 0.75rem;
+  background: white;
+}
+
+.rhoe-viewer .rhoe-frame.is-active {
+  box-shadow: 0 12px 28px rgba(24, 50, 63, 0.12);
+}

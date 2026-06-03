@@ -1,0 +1,36 @@
+{
+  "id": "rhoeLatexCore",
+  "label": "RhoeLaTeX Core",
+  "packageKind": "realizationPack",
+  "version": "0.9.0",
+  "targetSurface": "rhoeLatex",
+  "realizationProfiles": [
+    "rhoeLatex/document",
+    "rhoeLatex/presentation"
+  ],
+  "carrierArchetypes": [
+    "stageFrame",
+    "codexSpread",
+    "scrollStream",
+    "tableauPageCollage",
+    "sheetField",
+    "ledgerRegister",
+    "box",
+    "conversationThread"
+  ],
+  "entrypoints": {
+    "package": "rhoe-core.sty",
+    "class": "rhoe-core.cls",
+    "document": "templates/document.tex",
+    "presentation": "templates/presentation.tex",
+    "inline": "inline-preamble.tex"
+  },
+  "assets": [
+    "rhoe-core.sty",
+    "rhoe-core.cls",
+    "templates/document.tex",
+    "templates/presentation.tex",
+    "inline-preamble.tex"
+  ],
+  "dependencies": []
+}

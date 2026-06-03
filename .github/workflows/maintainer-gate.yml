@@ -1,0 +1,37 @@
+name: Maintainer Gate
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  verify:
+    name: Spec Authority And Release-Pack Hygiene
+    runs-on: macos-15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Show Tool Versions
+        run: |
+          python3 --version
+          node --version
+
+      - name: Install Validation Dependencies
+        run: |
+          brew install typst
+          brew install --cask basictex
+          echo "/Library/TeX/texbin" >> "$GITHUB_PATH"
+          export PATH="/Library/TeX/texbin:$PATH"
+          sudo tlmgr update --self
+          sudo tlmgr install latexmk
+          python3 -m venv .venv
+          . .venv/bin/activate
+          python -m pip install --upgrade pip
+          python -m pip install jsonschema -r requirements-docs.txt
+          echo "$PWD/.venv/bin" >> "$GITHUB_PATH"
+
+      - name: Verify RhoeLanguage Authority Pack
+        run: bash ./scripts/verify-cutover.sh

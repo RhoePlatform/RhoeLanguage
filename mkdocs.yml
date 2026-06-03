@@ -1,0 +1,76 @@
+site_name: Rhoe Language Specification
+site_description: Public Rhoe Language 0.9.0 specification, schemas, grammars, fixtures, and reference packs.
+site_url: https://rhoeplatform.github.io/RhoeLanguage/
+repo_url: https://github.com/RhoePlatform/RhoeLanguage
+repo_name: RhoePlatform/RhoeLanguage
+docs_dir: .docs-site-src
+site_dir: site
+strict: true
+
+theme:
+  name: material
+  language: en
+  features:
+    - navigation.instant
+    - navigation.sections
+    - navigation.top
+    - search.highlight
+    - toc.follow
+  palette:
+    primary: black
+    accent: deep orange
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - tables
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+  - Specification Index: 00-index.md
+  - Conventions: SPECIFICATION-CONVENTIONS.md
+  - Versioning: VERSIONING.md
+  - Glossary: GLOSSARY.md
+  - References: REFERENCES.md
+  - Part 0 - Foundation:
+      - Overview: part-0-foundation/00-part-0-index.md
+      - Language Identity And Versioning: part-0-foundation/01-language-identity-and-versioning.md
+      - Root Artifact Ontology: part-0-foundation/02-abstract-ontology-and-root-artifact.md
+      - Serialization And Validation: part-0-foundation/03-canonical-serialization-and-validation.md
+      - Terminology And Authority: part-0-foundation/04-terminology-taxonomy-and-authority-model.md
+      - Processing Pipeline: part-0-foundation/05-processing-pipeline-and-normalization.md
+      - Semantic Attributes: part-0-foundation/06-semantic-attributes-brand-and-critic-doctrine.md
+      - Stable Identity: part-0-foundation/07-stable-identity-numbering-and-cross-references.md
+      - Source Surfaces: part-0-foundation/08-source-surfaces-notation-islands-and-surface-equivalence.md
+      - Core Registries: part-0-foundation/09-core-registries.md
+      - Workbench Contract: part-0-foundation/10-artifact-workbench-contract-authority.md
+  - Part 1 - Author Surfaces:
+      - Overview: part-1-author-surfaces/00-part-1-index.md
+      - RhoeMD Overview: part-1-author-surfaces/10-rhoemd-overview-and-authoring-doctrine.md
+      - RhoeMD Syntax: part-1-author-surfaces/11-rhoemd-core-block-and-inline-syntax.md
+      - Matter Carriers: part-1-author-surfaces/12-rhoemd-matter-carriers-and-structural-directives.md
+      - StageFrame Surface: part-1-author-surfaces/13-rhoemd-stageframe-surface-and-compatibility.md
+      - Non-Stage Carriers: part-1-author-surfaces/14-rhoemd-nonstage-carrier-surfaces.md
+      - Grammar And Tokenization: part-1-author-surfaces/15-rhoemd-formal-grammar-and-tokenization.md
+      - RhoeDSL Reference: part-1-author-surfaces/16-rhoedsl-reference.md
+      - Surface Equivalence: part-1-author-surfaces/17-surface-equivalence-roundtripping-and-lowering.md
+  - Part 2 - Realization And Runtime:
+      - Overview: part-2-realization-runtime/00-part-2-index.md
+      - Target Realization: part-2-realization-runtime/20-target-realization-and-emission-doctrine.md
+      - Secondary Near-AST Surfaces: part-2-realization-runtime/20a-secondary-near-ast-surface-doctrine.md
+      - RhoeTypst Contract: part-2-realization-runtime/20b-rhoetypst-near-ast-contract.md
+      - RhoeLaTeX Contract: part-2-realization-runtime/20c-rhoelatex-near-ast-contract.md
+      - RhoeHTML Contract: part-2-realization-runtime/20d-rhoehtml-near-ast-contract.md
+      - Realization Packs: part-2-realization-runtime/20e-target-profiles-and-realization-pack-contracts.md
+      - Extension Architecture: part-2-realization-runtime/21-extension-and-composition-grammar-pack-architecture.md
+      - Computable Blocks: part-2-realization-runtime/22-computable-blocks-and-sandboxing.md
+      - Project Orchestration: part-2-realization-runtime/23-project-orchestration-build-and-pack-discovery.md
+      - Conformance And Fixtures: part-2-realization-runtime/24-conformance-validation-and-fixture-suites.md
+      - Compatibility Bridges: part-2-realization-runtime/25-migration-compatibility-and-version-bridges.md
+  - Machine Artifacts:
+      - Grammar Artifacts: machine/grammars/README.md
+      - Fixtures: fixtures/00-fixtures-index.md
+      - Reference Packs: reference-packs/00-reference-packs-index.md
+      - Release Pack: compiled/rhoe-spec-v0_9-release-pack.md

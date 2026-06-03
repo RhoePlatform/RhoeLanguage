@@ -1,0 +1,72 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{rhoe-core}[2026/04/06 Rhoe v0.9.0 core package]
+\RequirePackage{xparse}
+
+\NewDocumentEnvironment{RhoeArtifact}{ O{} +b }{#2}{}
+\NewDocumentEnvironment{RhoeFrontMatter}{ O{} +b }{#2}{}
+\NewDocumentEnvironment{RhoeMainMatter}{ O{} +b }{#2}{}
+\NewDocumentEnvironment{RhoeBackMatter}{ O{} +b }{#2}{}
+\NewDocumentEnvironment{RhoeSection}{ O{} +b }{\section*{}#2}{}
+\NewDocumentEnvironment{RhoeSubsection}{ O{} +b }{\subsection*{}#2}{}
+\NewDocumentEnvironment{RhoeSubSubsection}{ O{} +b }{\subsubsection*{}#2}{}
+\NewDocumentCommand{\RhoeRef}{ O{} }{\textbf{ref}}
+\NewDocumentCommand{\RhoeImage}{ O{} }{}
+\NewDocumentEnvironment{RhoeTable}{ O{} +b }{#2}{}
+
+\NewDocumentEnvironment{RhoeFrameSet}{ O{} +b }{#2}{}
+\NewDocumentEnvironment{RhoeFrame}{ O{} +b }{#2}{}
+\NewDocumentEnvironment{RhoeFrameSection}{ O{} +b }{#2}{}
+\NewDocumentEnvironment{RhoeAppendixFrameSet}{ O{} +b }{#2}{}
+\NewDocumentEnvironment{RhoeZone}{ O{} +b }{#2}{}
+
+\NewDocumentEnvironment{RhoeCodex}{ O{} +b }{#2}{}
+\NewDocumentEnvironment{RhoeChapter}{ O{} +b }{#2}{}
+\NewDocumentEnvironment{RhoeSpread}{ O{} +b }{#2}{}
+\NewDocumentEnvironment{RhoeAppendix}{ O{} +b }{#2}{}
+\NewDocumentEnvironment{RhoeReferenceApparatus}{ O{} +b }{#2}{}
+
+\NewDocumentEnvironment{RhoeStream}{ O{} +b }{#2}{}
+\NewDocumentEnvironment{RhoeFileSegment}{ O{} +b }{#2}{}
+\NewDocumentEnvironment{RhoeAnchor}{ O{} +b }{#2}{}
+\NewDocumentEnvironment{RhoeSupportMatter}{ O{} +b }{#2}{}
+\NewDocumentEnvironment{RhoeJump}{ O{} +b }{#2}{}
+
+\NewDocumentEnvironment{RhoeTableauDocument}{ O{} +b }{#2}{}
+\NewDocumentEnvironment{RhoePageFamily}{ O{} +b }{#2}{}
+\NewDocumentEnvironment{RhoeTableauPage}{ O{} +b }{#2}{}
+\NewDocumentEnvironment{RhoeRegionGroup}{ O{} +b }{#2}{}
+\NewDocumentEnvironment{RhoeHeroRegion}{ O{} +b }{#2}{}
+\NewDocumentEnvironment{RhoeSupportRegion}{ O{} +b }{#2}{}
+
+\NewDocumentEnvironment{RhoeFieldDocument}{ O{} +b }{#2}{}
+\NewDocumentEnvironment{RhoeSheet}{ O{} +b }{#2}{}
+\NewDocumentEnvironment{RhoePerimeter}{ O{} +b }{#2}{}
+\NewDocumentEnvironment{RhoeTopBand}{ O{} +b }{#2}{}
+\NewDocumentEnvironment{RhoeBottomBand}{ O{} +b }{#2}{}
+\NewDocumentEnvironment{RhoeSideBand}{ O{} +b }{#2}{}
+\NewDocumentEnvironment{RhoeRegion}{ O{} +b }{#2}{}
+
+\NewDocumentEnvironment{RhoeRegister}{ O{} +b }{#2}{}
+\NewDocumentEnvironment{RhoeCollection}{ O{} +b }{#2}{}
+\NewDocumentEnvironment{RhoeSchema}{ O{} +b }{#2}{}
+\NewDocumentEnvironment{RhoeRecord}{ O{} +b }{#2}{}
+\NewDocumentEnvironment{RhoeForm}{ O{} +b }{#2}{}
+\NewDocumentEnvironment{RhoeDashboard}{ O{} +b }{#2}{}
+\NewDocumentEnvironment{RhoeConstraint}{ O{} +b }{#2}{}
+
+\NewDocumentEnvironment{RhoeBox}{ O{} +b }{#2}{}
+\NewDocumentEnvironment{RhoeTagCatalog}{ O{} +b }{#2}{}
+\NewDocumentEnvironment{RhoeFragment}{ O{} +b }{#2}{}
+\NewDocumentEnvironment{RhoeSubcollection}{ O{} +b }{#2}{}
+\NewDocumentEnvironment{RhoeCluster}{ O{} +b }{#2}{}
+\NewDocumentEnvironment{RhoeSavedView}{ O{} +b }{#2}{}
+
+\NewDocumentEnvironment{RhoeThread}{ O{} +b }{#2}{}
+\NewDocumentEnvironment{RhoeParticipantProfile}{ O{} +b }{#2}{}
+\NewDocumentEnvironment{RhoeTopicBriefing}{ O{} +b }{#2}{}
+\NewDocumentEnvironment{RhoeConductDoctrine}{ O{} +b }{#2}{}
+\NewDocumentEnvironment{RhoeEpisode}{ O{} +b }{#2}{}
+\NewDocumentEnvironment{RhoeBranch}{ O{} +b }{#2}{}
+\NewDocumentEnvironment{RhoeTurn}{ O{} +b }{#2}{}
+\NewDocumentEnvironment{RhoeAttachmentRef}{ O{} +b }{#2}{}
+\NewDocumentEnvironment{RhoeOutcome}{ O{} +b }{#2}{}

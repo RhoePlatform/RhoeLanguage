@@ -1,0 +1,41 @@
+\documentclass{article}
+\usepackage{xparse}
+\NewDocumentEnvironment{RhoeArtifact}{ O{} +b }{#2}{}
+\NewDocumentEnvironment{RhoeFrontMatter}{ O{} +b }{#2}{}
+\NewDocumentEnvironment{RhoeMainMatter}{ O{} +b }{#2}{}
+\NewDocumentEnvironment{RhoeBackMatter}{ O{} +b }{#2}{}
+\NewDocumentEnvironment{RhoeFrameSet}{ O{} +b }{#2}{}
+\NewDocumentEnvironment{RhoeFrame}{ O{} +b }{#2}{}
+\NewDocumentEnvironment{RhoeAppendixFrameSet}{ O{} +b }{#2}{}
+\NewDocumentEnvironment{RhoeZone}{ O{} +b }{#2}{}
+\begin{document}
+\begin{RhoeArtifact}[id={growth-review}, title={Growth Strategy Review}, carrier={stageFrame}, genre={executiveDecision}, compositionGrammar={executive/default}]
+\begin{RhoeFrontMatter}
+\begin{RhoeFrameSet}[id={opening}]
+\begin{RhoeFrame}[id={opening-1}, shellRole={coverOpener}]
+\begin{RhoeZone}[role={main}]
+Growth Strategy Review
+\end{RhoeZone}
+\end{RhoeFrame}
+\end{RhoeFrameSet}
+\end{RhoeFrontMatter}
+\begin{RhoeMainMatter}
+\begin{RhoeFrameSet}[id={core}]
+\begin{RhoeFrame}[id={decision-1}, shellRole={comparisonOption}, continuation={continued}]
+\begin{RhoeZone}[role={main}]
+Option comparison content.
+\end{RhoeZone}
+\end{RhoeFrame}
+\end{RhoeFrameSet}
+\end{RhoeMainMatter}
+\begin{RhoeBackMatter}
+\begin{RhoeAppendixFrameSet}[id={appendix}]
+\begin{RhoeFrame}[id={appendix-1}, shellRole={appendixSupport}]
+\begin{RhoeZone}[role={main}]
+Appendix evidence and references.
+\end{RhoeZone}
+\end{RhoeFrame}
+\end{RhoeAppendixFrameSet}
+\end{RhoeBackMatter}
+\end{RhoeArtifact}
+\end{document}

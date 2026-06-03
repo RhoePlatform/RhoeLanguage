@@ -1,0 +1,25 @@
+\documentclass{article}
+\usepackage{../../../reference-packs/rhoeLatexCore/rhoe-core}
+\begin{document}
+\begin{RhoeArtifact}[id={field-guide}, title={Field Guide}, carrier={codexSpread}, genre={ext.referenceCodex}, compositionGrammar={codex/default}]
+\begin{RhoeFrontMatter}
+\begin{RhoeCodex}[title={Prelims}]
+Preface and edition statement.
+\end{RhoeCodex}
+\end{RhoeFrontMatter}
+\begin{RhoeMainMatter}
+\begin{RhoeSection}[title={Overview}, id={overview}]
+\begin{RhoeChapter}[title={Overview}]
+\begin{RhoeSpread}[title={Core Spread}, id={core-spread}]
+Core chapter body.
+\end{RhoeSpread}
+\end{RhoeChapter}
+\end{RhoeSection}
+\end{RhoeMainMatter}
+\begin{RhoeBackMatter}
+\begin{RhoeReferenceApparatus}
+\RhoeRef[target={core-spread}, mode={full}]
+\end{RhoeReferenceApparatus}
+\end{RhoeBackMatter}
+\end{RhoeArtifact}
+\end{document}

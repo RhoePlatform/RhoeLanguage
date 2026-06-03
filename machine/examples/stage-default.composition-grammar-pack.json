@@ -1,0 +1,17 @@
+{
+  "id": "rhoe.core.stage-default",
+  "label": "Rhoe Core Stage Default",
+  "packageKind": "compositionGrammarPack",
+  "version": "0.9.0",
+  "provides": [
+    "stage/default"
+  ],
+  "carrierArchetypes": [
+    "stageFrame"
+  ],
+  "entrypoints": {
+    "parserHints": "builtin://rhoemd/stage-default",
+    "writerHints": "builtin://writers/stage-default"
+  },
+  "dependencies": []
+}

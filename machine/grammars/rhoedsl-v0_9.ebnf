@@ -1,0 +1,109 @@
+artifact = "Artifact", "(", artifactFields, ")", block ;
+
+artifactFields = field, { ",", field } ;
+field =
+  "id", ":", string
+  | "title", ":", string
+  | "carrierArchetype", ":", identifier
+  | "genre", ":", ( identifier | dottedIdentifier )
+  | "compositionGrammarRef", ":", string ;
+
+block = "{", { node }, "}" ;
+
+node =
+  matterNode
+  | stageNode
+  | codexNode
+  | scrollNode
+  | tableauNode
+  | sheetNode
+  | ledgerNode
+  | boxNode
+  | conversationNode
+  | genericNode ;
+
+matterNode =
+  "FrontMatter", block
+  | "MainMatter", block
+  | "BackMatter", block
+  | sectionNode ;
+
+sectionNode =
+  "Section", [ "(", fieldList, ")" ], block
+  | "Subsection", [ "(", fieldList, ")" ], block
+  | "SubSubsection", [ "(", fieldList, ")" ], block ;
+
+stageNode =
+  "FrameSection", [ "(", fieldList, ")" ], block
+  | "FrameSet", [ "(", fieldList, ")" ], block
+  | "AppendixFrameSet", [ "(", fieldList, ")" ], block
+  | "Frame", [ "(", fieldList, ")" ], block
+  | "Zone", "(", identifier, ")", block ;
+
+codexNode =
+  "Codex", [ "(", fieldList, ")" ], block
+  | "Chapter", [ "(", fieldList, ")" ], block
+  | "Spread", [ "(", fieldList, ")" ], block
+  | "Appendix", [ "(", fieldList, ")" ], block
+  | "ReferenceApparatus", [ "(", fieldList, ")" ], block ;
+
+scrollNode =
+  "Stream", [ "(", fieldList, ")" ], block
+  | "FileSegment", [ "(", fieldList, ")" ], block
+  | "Anchor", [ "(", fieldList, ")" ], block
+  | "SupportMatter", [ "(", fieldList, ")" ], block
+  | "Jump", [ "(", fieldList, ")" ], block ;
+
+tableauNode =
+  "TableauDocument", [ "(", fieldList, ")" ], block
+  | "PageFamily", [ "(", fieldList, ")" ], block
+  | "TableauPage", [ "(", fieldList, ")" ], block
+  | "RegionGroup", [ "(", fieldList, ")" ], block
+  | "HeroRegion", [ "(", fieldList, ")" ], block
+  | "SupportRegion", [ "(", fieldList, ")" ], block ;
+
+sheetNode =
+  "FieldDocument", [ "(", fieldList, ")" ], block
+  | "Sheet", [ "(", fieldList, ")" ], block
+  | "Perimeter", [ "(", fieldList, ")" ], block
+  | "TopBand", [ "(", fieldList, ")" ], block
+  | "BottomBand", [ "(", fieldList, ")" ], block
+  | "SideBand", [ "(", fieldList, ")" ], block
+  | "Region", [ "(", fieldList, ")" ], block ;
+
+ledgerNode =
+  "Register", [ "(", fieldList, ")" ], block
+  | "Collection", [ "(", fieldList, ")" ], block
+  | "Schema", [ "(", fieldList, ")" ], block
+  | "Record", [ "(", fieldList, ")" ], block
+  | "Form", [ "(", fieldList, ")" ], block
+  | "Dashboard", [ "(", fieldList, ")" ], block
+  | "Constraint", [ "(", fieldList, ")" ], block ;
+
+boxNode =
+  "Box", [ "(", fieldList, ")" ], block
+  | "TagCatalog", [ "(", fieldList, ")" ], block
+  | "Fragment", [ "(", fieldList, ")" ], block
+  | "Subcollection", [ "(", fieldList, ")" ], block
+  | "Cluster", [ "(", fieldList, ")" ], block
+  | "SavedView", [ "(", fieldList, ")" ], block ;
+
+conversationNode =
+  "Thread", [ "(", fieldList, ")" ], block
+  | "ParticipantProfile", [ "(", fieldList, ")" ], block
+  | "TopicBriefing", [ "(", fieldList, ")" ], block
+  | "ConductDoctrine", [ "(", fieldList, ")" ], block
+  | "Episode", [ "(", fieldList, ")" ], block
+  | "Branch", [ "(", fieldList, ")" ], block
+  | "Turn", [ "(", fieldList, ")" ], block
+  | "AttachmentRef", [ "(", fieldList, ")" ], block
+  | "Outcome", [ "(", fieldList, ")" ], block ;
+
+genericNode = identifier, [ "(", fieldList, ")" ], block ;
+fieldList = fieldValue, { ",", fieldValue } ;
+fieldValue = identifier, ":", ( string | identifier | dottedIdentifier ) ;
+identifier = letter, { letter | digit | "_" } ;
+dottedIdentifier = identifier, ".", identifier ;
+string = "\"", { ? any character except quote ? }, "\"" ;
+letter = "A".."Z" | "a".."z" ;
+digit = "0".."9" ;

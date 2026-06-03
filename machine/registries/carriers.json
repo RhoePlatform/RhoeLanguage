@@ -1,0 +1,213 @@
+[
+  {
+    "id": "stageFrame",
+    "surface": "stage/frame",
+    "label": "Stage / Frame",
+    "status": "core-stable",
+    "depth": "deep-specialization",
+    "canonicalNodeKinds": [
+      "Section",
+      "Subsection",
+      "SubSubsection",
+      "FrameSection",
+      "FrameSet",
+      "AppendixFrameSet",
+      "Frame"
+    ],
+    "surfaceDirectives": [
+      "frameset",
+      "frame",
+      "frame-section",
+      "appendix-frameset",
+      "zone"
+    ]
+  },
+  {
+    "id": "codexSpread",
+    "surface": "codex/spread",
+    "label": "Codex / Spread",
+    "status": "baseline-stable",
+    "depth": "normative-minimum",
+    "canonicalNodeKinds": [
+      "Section",
+      "Subsection",
+      "SubSubsection",
+      "Codex",
+      "Chapter",
+      "Spread",
+      "Appendix",
+      "ReferenceApparatus"
+    ],
+    "surfaceDirectives": [
+      "codex",
+      "chapter",
+      "spread",
+      "appendix",
+      "reference-apparatus"
+    ]
+  },
+  {
+    "id": "scrollStream",
+    "surface": "scroll/stream",
+    "label": "Scroll / Stream",
+    "status": "baseline-stable",
+    "depth": "normative-minimum",
+    "canonicalNodeKinds": [
+      "Section",
+      "Subsection",
+      "SubSubsection",
+      "Stream",
+      "FileSegment",
+      "Anchor",
+      "SupportMatter",
+      "Jump"
+    ],
+    "surfaceDirectives": [
+      "stream",
+      "file-segment",
+      "anchor",
+      "support-matter",
+      "jump"
+    ]
+  },
+  {
+    "id": "tableauPageCollage",
+    "surface": "tableau/page-collage",
+    "label": "Tableau / Page Collage",
+    "status": "baseline-stable",
+    "depth": "normative-minimum",
+    "canonicalNodeKinds": [
+      "Section",
+      "Subsection",
+      "SubSubsection",
+      "TableauDocument",
+      "PageFamily",
+      "TableauPage",
+      "RegionGroup",
+      "HeroRegion",
+      "SupportRegion"
+    ],
+    "surfaceDirectives": [
+      "tableau-document",
+      "page-family",
+      "tableau-page",
+      "region-group",
+      "hero-region",
+      "support-region"
+    ]
+  },
+  {
+    "id": "sheetField",
+    "surface": "sheet/field",
+    "label": "Sheet / Field",
+    "status": "baseline-stable",
+    "depth": "normative-minimum",
+    "canonicalNodeKinds": [
+      "Section",
+      "Subsection",
+      "SubSubsection",
+      "FieldDocument",
+      "Sheet",
+      "Perimeter",
+      "TopBand",
+      "BottomBand",
+      "SideBand",
+      "Region"
+    ],
+    "surfaceDirectives": [
+      "field-document",
+      "sheet",
+      "perimeter",
+      "top-band",
+      "bottom-band",
+      "side-band",
+      "region"
+    ]
+  },
+  {
+    "id": "ledgerRegister",
+    "surface": "ledger/register",
+    "label": "Ledger / Register",
+    "status": "baseline-stable",
+    "depth": "normative-minimum",
+    "canonicalNodeKinds": [
+      "Section",
+      "Subsection",
+      "SubSubsection",
+      "Register",
+      "Collection",
+      "Schema",
+      "Record",
+      "Form",
+      "Dashboard",
+      "Constraint"
+    ],
+    "surfaceDirectives": [
+      "register",
+      "collection",
+      "schema",
+      "record",
+      "form",
+      "dashboard",
+      "constraint"
+    ]
+  },
+  {
+    "id": "box",
+    "surface": "box/collection",
+    "label": "Box / Collection",
+    "status": "baseline-stable",
+    "depth": "normative-minimum",
+    "canonicalNodeKinds": [
+      "Section",
+      "Subsection",
+      "SubSubsection",
+      "Box",
+      "TagCatalog",
+      "Fragment",
+      "Subcollection",
+      "Cluster",
+      "SavedView"
+    ],
+    "surfaceDirectives": [
+      "box",
+      "tag-catalog",
+      "fragment",
+      "subcollection",
+      "cluster",
+      "saved-view"
+    ]
+  },
+  {
+    "id": "conversationThread",
+    "surface": "conversation/thread",
+    "label": "Conversation / Thread",
+    "status": "baseline-stable",
+    "depth": "normative-minimum",
+    "canonicalNodeKinds": [
+      "Section",
+      "Subsection",
+      "SubSubsection",
+      "Thread",
+      "ParticipantProfile",
+      "TopicBriefing",
+      "ConductDoctrine",
+      "Episode",
+      "Branch",
+      "Turn",
+      "AttachmentRef",
+      "Outcome"
+    ],
+    "surfaceDirectives": [
+      "thread",
+      "participant-profile",
+      "topic-briefing",
+      "conduct-doctrine",
+      "episode",
+      "branch",
+      "turn",
+      "attachment-ref",
+      "outcome"
+    ]
+  }
+]

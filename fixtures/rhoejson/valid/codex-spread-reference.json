@@ -1,0 +1,57 @@
+{
+  "kind": "Artifact",
+  "id": "field-guide",
+  "title": "Field Guide",
+  "carrierArchetype": "codexSpread",
+  "genre": "ext.referenceCodex",
+  "matter": {
+    "frontMatter": [
+      {
+        "kind": "Codex",
+        "title": "Prelims",
+        "children": [
+          {
+            "kind": "TextBlock",
+            "text": "Preface and edition statement."
+          }
+        ]
+      }
+    ],
+    "mainMatter": [
+      {
+        "kind": "Chapter",
+        "title": "Overview",
+        "children": [
+          {
+            "kind": "Spread",
+            "title": "Core Spread",
+            "children": [
+              {
+                "kind": "TextBlock",
+                "text": "Core chapter body."
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "backMatter": [
+      {
+        "kind": "ReferenceApparatus",
+        "title": "References",
+        "children": [
+          {
+            "kind": "TextBlock",
+            "text": "Index, glossary, bibliography."
+          }
+        ]
+      }
+    ]
+  },
+  "compositionGrammarRef": "codex/default",
+  "metadata": {},
+  "attachments": [],
+  "references": [],
+  "projections": [],
+  "transformationHistory": []
+}

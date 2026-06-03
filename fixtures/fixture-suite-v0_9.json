@@ -1,0 +1,620 @@
+{
+  "suiteId": "rhoe-v0_9-baseline-fixtures",
+  "version": "0.9.0",
+  "fixtures": [
+    {
+      "id": "stage-frame-executive-rhoejson",
+      "family": "canonical-rhoejson",
+      "format": "json",
+      "path": "rhoejson/valid/stage-frame-executive.json",
+      "carrierArchetype": "stageFrame",
+      "validity": "valid",
+      "canonical": true,
+      "notes": "Deep stage fixture with shell and zone semantics."
+    },
+    {
+      "id": "artifact-workbench-board-readiness-rhoejson",
+      "family": "artifact-workbench-contract",
+      "format": "json",
+      "path": "rhoejson/valid/artifact-workbench-board-readiness.json",
+      "carrierArchetype": "stageFrame",
+      "validity": "valid",
+      "canonical": true,
+      "notes": "Artifact Workbench semantic master contract fixture for board-readiness artifact work."
+    },
+    {
+      "id": "codex-spread-reference-rhoejson",
+      "family": "canonical-rhoejson",
+      "format": "json",
+      "path": "rhoejson/valid/codex-spread-reference.json",
+      "carrierArchetype": "codexSpread",
+      "validity": "valid",
+      "canonical": true
+    },
+    {
+      "id": "scroll-stream-review-rhoejson",
+      "family": "canonical-rhoejson",
+      "format": "json",
+      "path": "rhoejson/valid/scroll-stream-review.json",
+      "carrierArchetype": "scrollStream",
+      "validity": "valid",
+      "canonical": true
+    },
+    {
+      "id": "tableau-page-collage-rhoejson",
+      "family": "canonical-rhoejson",
+      "format": "json",
+      "path": "rhoejson/valid/tableau-page-collage-brief.json",
+      "carrierArchetype": "tableauPageCollage",
+      "validity": "valid",
+      "canonical": true
+    },
+    {
+      "id": "sheet-field-rhoejson",
+      "family": "canonical-rhoejson",
+      "format": "json",
+      "path": "rhoejson/valid/sheet-field-worksheet.json",
+      "carrierArchetype": "sheetField",
+      "validity": "valid",
+      "canonical": true
+    },
+    {
+      "id": "ledger-register-rhoejson",
+      "family": "canonical-rhoejson",
+      "format": "json",
+      "path": "rhoejson/valid/ledger-register-risk-register.json",
+      "carrierArchetype": "ledgerRegister",
+      "validity": "valid",
+      "canonical": true
+    },
+    {
+      "id": "box-rhoejson",
+      "family": "canonical-rhoejson",
+      "format": "json",
+      "path": "rhoejson/valid/box-research-box.json",
+      "carrierArchetype": "box",
+      "validity": "valid",
+      "canonical": true
+    },
+    {
+      "id": "conversation-thread-rhoejson",
+      "family": "canonical-rhoejson",
+      "format": "json",
+      "path": "rhoejson/valid/conversation-thread-review.json",
+      "carrierArchetype": "conversationThread",
+      "validity": "valid",
+      "canonical": true
+    },
+    {
+      "id": "stage-frame-canonical-rhoemd",
+      "family": "canonical-rhoemd",
+      "format": "markdown",
+      "path": "rhoemd/canonical/stage-frame-executive.md",
+      "carrierArchetype": "stageFrame",
+      "validity": "valid",
+      "canonical": true,
+      "expectedCanonicalAst": "rhoejson/valid/stage-frame-executive.json"
+    },
+    {
+      "id": "artifact-workbench-board-readiness-rhoemd",
+      "family": "artifact-workbench-contract",
+      "format": "markdown",
+      "path": "rhoemd/canonical/artifact-workbench-board-readiness.md",
+      "carrierArchetype": "stageFrame",
+      "validity": "valid",
+      "canonical": true,
+      "expectedCanonicalAst": "rhoejson/valid/artifact-workbench-board-readiness.json",
+      "notes": "Source-preserving rhoemd master for the Artifact Workbench board-readiness fixture."
+    },
+    {
+      "id": "codex-canonical-rhoemd",
+      "family": "canonical-rhoemd",
+      "format": "markdown",
+      "path": "rhoemd/canonical/codex-spread-reference.md",
+      "carrierArchetype": "codexSpread",
+      "validity": "valid",
+      "canonical": true,
+      "expectedCanonicalAst": "rhoejson/valid/codex-spread-reference.json"
+    },
+    {
+      "id": "stage-frame-canonical-rhoedsl",
+      "family": "canonical-rhoedsl",
+      "format": "rhoedsl",
+      "path": "rhoedsl/canonical/stage-frame-executive.rhoedsl",
+      "carrierArchetype": "stageFrame",
+      "validity": "valid",
+      "canonical": true,
+      "expectedCanonicalAst": "rhoejson/valid/stage-frame-executive.json"
+    },
+    {
+      "id": "ledger-register-canonical-rhoedsl",
+      "family": "canonical-rhoedsl",
+      "format": "rhoedsl",
+      "path": "rhoedsl/canonical/ledger-register-risk-register.rhoedsl",
+      "carrierArchetype": "ledgerRegister",
+      "validity": "valid",
+      "canonical": true
+    },
+    {
+      "id": "stage-frame-executive-rhoetypst",
+      "family": "canonical-rhoetypst",
+      "format": "typst",
+      "path": "rhoetypst/canonical/stage-frame-executive.typ",
+      "carrierArchetype": "stageFrame",
+      "targetSurface": "rhoeTypst",
+      "realizationProfile": "rhoeTypst/presentation",
+      "validity": "valid",
+      "canonical": true,
+      "expectedCanonicalAst": "rhoejson/valid/stage-frame-executive.json"
+    },
+    {
+      "id": "codex-spread-reference-rhoetypst",
+      "family": "canonical-rhoetypst",
+      "format": "typst",
+      "path": "rhoetypst/canonical/codex-spread-reference.typ",
+      "carrierArchetype": "codexSpread",
+      "targetSurface": "rhoeTypst",
+      "realizationProfile": "rhoeTypst/document",
+      "validity": "valid",
+      "canonical": true,
+      "expectedCanonicalAst": "rhoejson/valid/codex-spread-reference.json"
+    },
+    {
+      "id": "scroll-stream-review-rhoetypst",
+      "family": "canonical-rhoetypst",
+      "format": "typst",
+      "path": "rhoetypst/canonical/scroll-stream-review.typ",
+      "carrierArchetype": "scrollStream",
+      "targetSurface": "rhoeTypst",
+      "realizationProfile": "rhoeTypst/document",
+      "validity": "valid",
+      "canonical": true,
+      "expectedCanonicalAst": "rhoejson/valid/scroll-stream-review.json"
+    },
+    {
+      "id": "tableau-page-collage-rhoetypst",
+      "family": "canonical-rhoetypst",
+      "format": "typst",
+      "path": "rhoetypst/canonical/tableau-page-collage-brief.typ",
+      "carrierArchetype": "tableauPageCollage",
+      "targetSurface": "rhoeTypst",
+      "realizationProfile": "rhoeTypst/document",
+      "validity": "valid",
+      "canonical": true,
+      "expectedCanonicalAst": "rhoejson/valid/tableau-page-collage-brief.json"
+    },
+    {
+      "id": "sheet-field-worksheet-rhoetypst",
+      "family": "canonical-rhoetypst",
+      "format": "typst",
+      "path": "rhoetypst/canonical/sheet-field-worksheet.typ",
+      "carrierArchetype": "sheetField",
+      "targetSurface": "rhoeTypst",
+      "realizationProfile": "rhoeTypst/document",
+      "validity": "valid",
+      "canonical": true,
+      "expectedCanonicalAst": "rhoejson/valid/sheet-field-worksheet.json"
+    },
+    {
+      "id": "ledger-register-risk-register-rhoetypst",
+      "family": "canonical-rhoetypst",
+      "format": "typst",
+      "path": "rhoetypst/canonical/ledger-register-risk-register.typ",
+      "carrierArchetype": "ledgerRegister",
+      "targetSurface": "rhoeTypst",
+      "realizationProfile": "rhoeTypst/document",
+      "validity": "valid",
+      "canonical": true,
+      "expectedCanonicalAst": "rhoejson/valid/ledger-register-risk-register.json"
+    },
+    {
+      "id": "box-research-box-rhoetypst",
+      "family": "canonical-rhoetypst",
+      "format": "typst",
+      "path": "rhoetypst/canonical/box-research-box.typ",
+      "carrierArchetype": "box",
+      "targetSurface": "rhoeTypst",
+      "realizationProfile": "rhoeTypst/document",
+      "validity": "valid",
+      "canonical": true,
+      "expectedCanonicalAst": "rhoejson/valid/box-research-box.json"
+    },
+    {
+      "id": "conversation-thread-review-rhoetypst",
+      "family": "canonical-rhoetypst",
+      "format": "typst",
+      "path": "rhoetypst/canonical/conversation-thread-review.typ",
+      "carrierArchetype": "conversationThread",
+      "targetSurface": "rhoeTypst",
+      "realizationProfile": "rhoeTypst/document",
+      "validity": "valid",
+      "canonical": true,
+      "expectedCanonicalAst": "rhoejson/valid/conversation-thread-review.json"
+    },
+    {
+      "id": "stage-frame-inline-rhoetypst",
+      "family": "canonical-rhoetypst",
+      "format": "typst",
+      "path": "rhoetypst/inline/stage-frame-executive-inline.typ",
+      "carrierArchetype": "stageFrame",
+      "targetSurface": "rhoeTypst",
+      "realizationProfile": "rhoeTypst/presentation",
+      "validity": "valid",
+      "canonical": false,
+      "expectedCanonicalAst": "rhoejson/valid/stage-frame-executive.json",
+      "notes": "Self-contained inline mode fixture."
+    },
+    {
+      "id": "stage-frame-executive-rhoelatex",
+      "family": "canonical-rhoelatex",
+      "format": "latex",
+      "path": "rhoelatex/canonical/stage-frame-executive.tex",
+      "carrierArchetype": "stageFrame",
+      "targetSurface": "rhoeLatex",
+      "realizationProfile": "rhoeLatex/presentation",
+      "validity": "valid",
+      "canonical": true,
+      "expectedCanonicalAst": "rhoejson/valid/stage-frame-executive.json"
+    },
+    {
+      "id": "codex-spread-reference-rhoelatex",
+      "family": "canonical-rhoelatex",
+      "format": "latex",
+      "path": "rhoelatex/canonical/codex-spread-reference.tex",
+      "carrierArchetype": "codexSpread",
+      "targetSurface": "rhoeLatex",
+      "realizationProfile": "rhoeLatex/document",
+      "validity": "valid",
+      "canonical": true,
+      "expectedCanonicalAst": "rhoejson/valid/codex-spread-reference.json"
+    },
+    {
+      "id": "scroll-stream-review-rhoelatex",
+      "family": "canonical-rhoelatex",
+      "format": "latex",
+      "path": "rhoelatex/canonical/scroll-stream-review.tex",
+      "carrierArchetype": "scrollStream",
+      "targetSurface": "rhoeLatex",
+      "realizationProfile": "rhoeLatex/document",
+      "validity": "valid",
+      "canonical": true,
+      "expectedCanonicalAst": "rhoejson/valid/scroll-stream-review.json"
+    },
+    {
+      "id": "tableau-page-collage-rhoelatex",
+      "family": "canonical-rhoelatex",
+      "format": "latex",
+      "path": "rhoelatex/canonical/tableau-page-collage-brief.tex",
+      "carrierArchetype": "tableauPageCollage",
+      "targetSurface": "rhoeLatex",
+      "realizationProfile": "rhoeLatex/document",
+      "validity": "valid",
+      "canonical": true,
+      "expectedCanonicalAst": "rhoejson/valid/tableau-page-collage-brief.json"
+    },
+    {
+      "id": "sheet-field-worksheet-rhoelatex",
+      "family": "canonical-rhoelatex",
+      "format": "latex",
+      "path": "rhoelatex/canonical/sheet-field-worksheet.tex",
+      "carrierArchetype": "sheetField",
+      "targetSurface": "rhoeLatex",
+      "realizationProfile": "rhoeLatex/document",
+      "validity": "valid",
+      "canonical": true,
+      "expectedCanonicalAst": "rhoejson/valid/sheet-field-worksheet.json"
+    },
+    {
+      "id": "ledger-register-risk-register-rhoelatex",
+      "family": "canonical-rhoelatex",
+      "format": "latex",
+      "path": "rhoelatex/canonical/ledger-register-risk-register.tex",
+      "carrierArchetype": "ledgerRegister",
+      "targetSurface": "rhoeLatex",
+      "realizationProfile": "rhoeLatex/document",
+      "validity": "valid",
+      "canonical": true,
+      "expectedCanonicalAst": "rhoejson/valid/ledger-register-risk-register.json"
+    },
+    {
+      "id": "box-research-box-rhoelatex",
+      "family": "canonical-rhoelatex",
+      "format": "latex",
+      "path": "rhoelatex/canonical/box-research-box.tex",
+      "carrierArchetype": "box",
+      "targetSurface": "rhoeLatex",
+      "realizationProfile": "rhoeLatex/document",
+      "validity": "valid",
+      "canonical": true,
+      "expectedCanonicalAst": "rhoejson/valid/box-research-box.json"
+    },
+    {
+      "id": "conversation-thread-review-rhoelatex",
+      "family": "canonical-rhoelatex",
+      "format": "latex",
+      "path": "rhoelatex/canonical/conversation-thread-review.tex",
+      "carrierArchetype": "conversationThread",
+      "targetSurface": "rhoeLatex",
+      "realizationProfile": "rhoeLatex/document",
+      "validity": "valid",
+      "canonical": true,
+      "expectedCanonicalAst": "rhoejson/valid/conversation-thread-review.json"
+    },
+    {
+      "id": "stage-frame-inline-rhoelatex",
+      "family": "canonical-rhoelatex",
+      "format": "latex",
+      "path": "rhoelatex/inline/stage-frame-executive-inline.tex",
+      "carrierArchetype": "stageFrame",
+      "targetSurface": "rhoeLatex",
+      "realizationProfile": "rhoeLatex/presentation",
+      "validity": "valid",
+      "canonical": false,
+      "expectedCanonicalAst": "rhoejson/valid/stage-frame-executive.json",
+      "notes": "Self-contained inline mode fixture."
+    },
+    {
+      "id": "stage-frame-executive-rhoehtml",
+      "family": "canonical-rhoehtml",
+      "format": "html",
+      "path": "rhoehtml/canonical/stage-frame-executive.html",
+      "carrierArchetype": "stageFrame",
+      "targetSurface": "rhoeHtml",
+      "realizationProfile": "rhoeHtml/viewer",
+      "validity": "valid",
+      "canonical": true,
+      "expectedCanonicalAst": "rhoejson/valid/stage-frame-executive.json"
+    },
+    {
+      "id": "codex-spread-reference-rhoehtml",
+      "family": "canonical-rhoehtml",
+      "format": "html",
+      "path": "rhoehtml/canonical/codex-spread-reference.html",
+      "carrierArchetype": "codexSpread",
+      "targetSurface": "rhoeHtml",
+      "realizationProfile": "rhoeHtml/document",
+      "validity": "valid",
+      "canonical": true,
+      "expectedCanonicalAst": "rhoejson/valid/codex-spread-reference.json"
+    },
+    {
+      "id": "scroll-stream-review-rhoehtml",
+      "family": "canonical-rhoehtml",
+      "format": "html",
+      "path": "rhoehtml/canonical/scroll-stream-review.html",
+      "carrierArchetype": "scrollStream",
+      "targetSurface": "rhoeHtml",
+      "realizationProfile": "rhoeHtml/document",
+      "validity": "valid",
+      "canonical": true,
+      "expectedCanonicalAst": "rhoejson/valid/scroll-stream-review.json"
+    },
+    {
+      "id": "tableau-page-collage-rhoehtml",
+      "family": "canonical-rhoehtml",
+      "format": "html",
+      "path": "rhoehtml/canonical/tableau-page-collage-brief.html",
+      "carrierArchetype": "tableauPageCollage",
+      "targetSurface": "rhoeHtml",
+      "realizationProfile": "rhoeHtml/document",
+      "validity": "valid",
+      "canonical": true,
+      "expectedCanonicalAst": "rhoejson/valid/tableau-page-collage-brief.json"
+    },
+    {
+      "id": "sheet-field-worksheet-rhoehtml",
+      "family": "canonical-rhoehtml",
+      "format": "html",
+      "path": "rhoehtml/canonical/sheet-field-worksheet.html",
+      "carrierArchetype": "sheetField",
+      "targetSurface": "rhoeHtml",
+      "realizationProfile": "rhoeHtml/document",
+      "validity": "valid",
+      "canonical": true,
+      "expectedCanonicalAst": "rhoejson/valid/sheet-field-worksheet.json"
+    },
+    {
+      "id": "ledger-register-risk-register-rhoehtml",
+      "family": "canonical-rhoehtml",
+      "format": "html",
+      "path": "rhoehtml/canonical/ledger-register-risk-register.html",
+      "carrierArchetype": "ledgerRegister",
+      "targetSurface": "rhoeHtml",
+      "realizationProfile": "rhoeHtml/document",
+      "validity": "valid",
+      "canonical": true,
+      "expectedCanonicalAst": "rhoejson/valid/ledger-register-risk-register.json"
+    },
+    {
+      "id": "box-research-box-rhoehtml",
+      "family": "canonical-rhoehtml",
+      "format": "html",
+      "path": "rhoehtml/canonical/box-research-box.html",
+      "carrierArchetype": "box",
+      "targetSurface": "rhoeHtml",
+      "realizationProfile": "rhoeHtml/document",
+      "validity": "valid",
+      "canonical": true,
+      "expectedCanonicalAst": "rhoejson/valid/box-research-box.json"
+    },
+    {
+      "id": "conversation-thread-review-rhoehtml",
+      "family": "canonical-rhoehtml",
+      "format": "html",
+      "path": "rhoehtml/canonical/conversation-thread-review.html",
+      "carrierArchetype": "conversationThread",
+      "targetSurface": "rhoeHtml",
+      "realizationProfile": "rhoeHtml/document",
+      "validity": "valid",
+      "canonical": true,
+      "expectedCanonicalAst": "rhoejson/valid/conversation-thread-review.json"
+    },
+    {
+      "id": "stage-frame-inline-rhoehtml",
+      "family": "canonical-rhoehtml",
+      "format": "html",
+      "path": "rhoehtml/inline/stage-frame-executive-inline.html",
+      "carrierArchetype": "stageFrame",
+      "targetSurface": "rhoeHtml",
+      "realizationProfile": "rhoeHtml/viewer",
+      "validity": "valid",
+      "canonical": false,
+      "expectedCanonicalAst": "rhoejson/valid/stage-frame-executive.json",
+      "notes": "Self-contained inline bundle fixture."
+    },
+    {
+      "id": "slide-alias-lowering",
+      "family": "compatibility-lowering",
+      "format": "markdown",
+      "path": "compatibility/slide-alias-to-frame.md",
+      "carrierArchetype": "stageFrame",
+      "validity": "valid",
+      "canonical": false,
+      "expectedNormalizationTarget": "rhoemd/canonical/stage-frame-executive.md"
+    },
+    {
+      "id": "legacy-percent-lowering",
+      "family": "compatibility-lowering",
+      "format": "markdown",
+      "path": "compatibility/legacy-percent-stage.md",
+      "carrierArchetype": "stageFrame",
+      "validity": "valid",
+      "canonical": false,
+      "expectedNormalizationTarget": "rhoemd/canonical/stage-frame-executive.md"
+    },
+    {
+      "id": "invalid-carrier-node-placement",
+      "family": "carrier-node-placement",
+      "format": "json",
+      "path": "rhoejson/invalid/invalid-carrier-node-placement.json",
+      "carrierArchetype": "codexSpread",
+      "validity": "invalid",
+      "expectedDiagnostics": [
+        "error: illegal-carrier-node-placement"
+      ]
+    },
+    {
+      "id": "invalid-missing-matter-zone",
+      "family": "carrier-node-placement",
+      "format": "json",
+      "path": "rhoejson/invalid/invalid-missing-matter-zone.json",
+      "carrierArchetype": "stageFrame",
+      "validity": "invalid",
+      "expectedDiagnostics": [
+        "error: missing-matter-zone"
+      ]
+    },
+    {
+      "id": "invalid-genre-namespacing",
+      "family": "carrier-node-placement",
+      "format": "json",
+      "path": "rhoejson/invalid/invalid-genre-namespacing.json",
+      "carrierArchetype": "scrollStream",
+      "validity": "invalid",
+      "expectedDiagnostics": [
+        "error: invalid-genre-id"
+      ]
+    },
+    {
+      "id": "invalid-legacy-grid-outside-slide",
+      "family": "compatibility-lowering",
+      "format": "markdown",
+      "path": "rhoemd/invalid/invalid-legacy-grid-outside-legacy-slide.md",
+      "carrierArchetype": "stageFrame",
+      "validity": "invalid",
+      "expectedDiagnostics": [
+        "error: legacy-grid-outside-legacy-slide"
+      ]
+    },
+    {
+      "id": "invalid-fence-mismatch",
+      "family": "compatibility-lowering",
+      "format": "markdown",
+      "path": "rhoemd/invalid/invalid-fence-mismatch.md",
+      "carrierArchetype": "codexSpread",
+      "validity": "invalid",
+      "expectedDiagnostics": [
+        "error: fence-length-mismatch"
+      ]
+    },
+    {
+      "id": "stage-frame-html-zone-preservation",
+      "family": "projection-conformance",
+      "format": "projection-assertion",
+      "path": "projection/stage-frame-html-zone-preservation.json",
+      "carrierArchetype": "stageFrame",
+      "targetSurface": "rhoeHtml",
+      "realizationProfile": "rhoeHtml/viewer",
+      "validity": "valid",
+      "notes": "Projection assertion fixture for zone and shell preservation."
+    },
+    {
+      "id": "stage-frame-typst-zone-preservation",
+      "family": "projection-conformance",
+      "format": "projection-assertion",
+      "path": "projection/stage-frame-typst-zone-preservation.json",
+      "carrierArchetype": "stageFrame",
+      "targetSurface": "rhoeTypst",
+      "realizationProfile": "rhoeTypst/presentation",
+      "validity": "valid"
+    },
+    {
+      "id": "stage-frame-latex-shell-zone-preservation",
+      "family": "projection-conformance",
+      "format": "projection-assertion",
+      "path": "projection/stage-frame-latex-shell-zone-preservation.json",
+      "carrierArchetype": "stageFrame",
+      "targetSurface": "rhoeLatex",
+      "realizationProfile": "rhoeLatex/presentation",
+      "validity": "valid"
+    },
+    {
+      "id": "cross-target-matter-preservation",
+      "family": "projection-conformance",
+      "format": "projection-assertion",
+      "path": "projection/cross-target-matter-preservation.json",
+      "validity": "valid"
+    },
+    {
+      "id": "cross-target-numbering-invariance",
+      "family": "projection-conformance",
+      "format": "projection-assertion",
+      "path": "projection/cross-target-numbering-invariance.json",
+      "validity": "valid"
+    },
+    {
+      "id": "cross-target-degradation-preserves-content",
+      "family": "projection-conformance",
+      "format": "projection-assertion",
+      "path": "projection/cross-target-degradation-preserves-content.json",
+      "validity": "valid"
+    },
+    {
+      "id": "html-layout-grid-non-table",
+      "family": "projection-conformance",
+      "format": "projection-assertion",
+      "path": "projection/html-layout-grid-non-table.json",
+      "targetSurface": "rhoeHtml",
+      "realizationProfile": "rhoeHtml/document",
+      "validity": "valid"
+    },
+    {
+      "id": "html-viewer-keyboard-navigation",
+      "family": "projection-conformance",
+      "format": "projection-assertion",
+      "path": "projection/html-viewer-keyboard-navigation.json",
+      "targetSurface": "rhoeHtml",
+      "realizationProfile": "rhoeHtml/viewer",
+      "validity": "valid"
+    },
+    {
+      "id": "html-nojs-readability",
+      "family": "projection-conformance",
+      "format": "projection-assertion",
+      "path": "projection/html-nojs-readability.json",
+      "targetSurface": "rhoeHtml",
+      "realizationProfile": "rhoeHtml/document",
+      "validity": "valid"
+    }
+  ]
+}

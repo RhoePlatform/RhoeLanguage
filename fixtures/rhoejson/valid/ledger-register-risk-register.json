@@ -1,0 +1,62 @@
+{
+  "kind": "Artifact",
+  "id": "risk-register",
+  "title": "Risk Register",
+  "carrierArchetype": "ledgerRegister",
+  "genre": "ext.operationsRegister",
+  "matter": {
+    "frontMatter": [
+      {
+        "kind": "Dashboard",
+        "title": "Portfolio Health",
+        "children": [
+          {
+            "kind": "TextBlock",
+            "text": "Current portfolio health."
+          }
+        ]
+      }
+    ],
+    "mainMatter": [
+      {
+        "kind": "Collection",
+        "title": "Risks",
+        "children": [
+          {
+            "kind": "Schema",
+            "title": "risk.v1",
+            "children": []
+          },
+          {
+            "kind": "Record",
+            "id": "risk-001",
+            "children": [
+              {
+                "kind": "TextBlock",
+                "text": "severity: high; owner: finance"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "backMatter": [
+      {
+        "kind": "Constraint",
+        "title": "Severity Constraint",
+        "children": [
+          {
+            "kind": "TextBlock",
+            "text": "Severity must be one of low, medium, high."
+          }
+        ]
+      }
+    ]
+  },
+  "compositionGrammarRef": "ledger/default",
+  "metadata": {},
+  "attachments": [],
+  "references": [],
+  "projections": [],
+  "transformationHistory": []
+}

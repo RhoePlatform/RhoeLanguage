@@ -1,0 +1,34 @@
+{
+  "id": "rhoeTypstCore",
+  "label": "RhoeTypst Core",
+  "packageKind": "realizationPack",
+  "version": "0.9.0",
+  "targetSurface": "rhoeTypst",
+  "realizationProfiles": [
+    "rhoeTypst/document",
+    "rhoeTypst/presentation"
+  ],
+  "carrierArchetypes": [
+    "stageFrame",
+    "codexSpread",
+    "scrollStream",
+    "tableauPageCollage",
+    "sheetField",
+    "ledgerRegister",
+    "box",
+    "conversationThread"
+  ],
+  "entrypoints": {
+    "core": "rhoe-core.typ",
+    "document": "templates/document.typ",
+    "presentation": "templates/presentation.typ",
+    "inline": "inline.typ"
+  },
+  "assets": [
+    "rhoe-core.typ",
+    "templates/document.typ",
+    "templates/presentation.typ",
+    "inline.typ"
+  ],
+  "dependencies": []
+}

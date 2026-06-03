@@ -1,0 +1,10 @@
+{
+  "id": "projection.html.noJsReadability",
+  "projectionKind": "html",
+  "sourceFixture": "../rhoehtml/canonical/codex-spread-reference.html",
+  "requiredSemantics": [
+    "document profile remains readable without JavaScript",
+    "semantic headings and references remain usable without enhancement code",
+    "CSS and JS are not the source of meaning"
+  ]
+}

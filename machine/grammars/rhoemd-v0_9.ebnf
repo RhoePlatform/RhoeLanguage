@@ -1,0 +1,152 @@
+document = [ head ], body, EOF ;
+
+head = yamlFence, { ? any character except closing yaml fence ? }, yamlFence ;
+yamlFence = "---", newline ;
+
+body = { blankLine | matterDirective | directive | block } ;
+
+matterDirective = canonicalMatterDirective | compatMatterDirective ;
+canonicalMatterDirective =
+  directiveFenceFamily,
+  ( "front-matter" | "main-matter" | "back-matter" ),
+  [ attrList ],
+  newline,
+  body,
+  directiveFenceFamily ;
+compatMatterDirective =
+  directiveFenceFamily,
+  ( "frontmatter" | "mainmatter" | "backmatter" ),
+  [ attrList ],
+  newline,
+  body,
+  directiveFenceFamily ;
+
+directive =
+  universalStructureDirective
+  | stageDirective
+  | deprecatedSlideDirective
+  | codexDirective
+  | scrollDirective
+  | tableauDirective
+  | sheetDirective
+  | ledgerDirective
+  | boxDirective
+  | conversationDirective
+  | genericDirective
+  | legacySlideOpener ;
+
+universalStructureDirective =
+  directiveFenceFamily,
+  ( "section" | "subsection" | "subsubsection" ),
+  [ attrList ],
+  newline,
+  body,
+  directiveFenceFamily ;
+
+stageDirective =
+  directiveFenceFamily,
+  ( "frameset" | "frame" | "frame-section" | "appendix-frameset" | "zone" ),
+  [ zoneSelector ],
+  [ attrList ],
+  newline,
+  body,
+  directiveFenceFamily ;
+
+deprecatedSlideDirective =
+  directiveFenceFamily,
+  ( "slide" | "slide-section" ),
+  [ zoneSelector ],
+  [ attrList ],
+  newline,
+  body,
+  directiveFenceFamily ;
+
+codexDirective =
+  directiveFenceFamily,
+  ( "codex" | "chapter" | "spread" | "appendix" | "reference-apparatus" ),
+  [ attrList ],
+  newline,
+  body,
+  directiveFenceFamily ;
+
+scrollDirective =
+  directiveFenceFamily,
+  ( "stream" | "file-segment" | "anchor" | "support-matter" | "jump" ),
+  [ attrList ],
+  newline,
+  body,
+  directiveFenceFamily ;
+
+tableauDirective =
+  directiveFenceFamily,
+  ( "tableau-document" | "page-family" | "tableau-page" | "region-group" | "hero-region" | "support-region" ),
+  [ attrList ],
+  newline,
+  body,
+  directiveFenceFamily ;
+
+sheetDirective =
+  directiveFenceFamily,
+  ( "field-document" | "sheet" | "perimeter" | "top-band" | "bottom-band" | "side-band" | "region" ),
+  [ attrList ],
+  newline,
+  body,
+  directiveFenceFamily ;
+
+ledgerDirective =
+  directiveFenceFamily,
+  ( "register" | "collection" | "schema" | "record" | "form" | "dashboard" | "constraint" ),
+  [ attrList ],
+  newline,
+  body,
+  directiveFenceFamily ;
+
+boxDirective =
+  directiveFenceFamily,
+  ( "box" | "tag-catalog" | "fragment" | "subcollection" | "cluster" | "saved-view" ),
+  [ attrList ],
+  newline,
+  body,
+  directiveFenceFamily ;
+
+conversationDirective =
+  directiveFenceFamily,
+  ( "thread" | "participant-profile" | "topic-briefing" | "conduct-doctrine" | "episode" | "branch" | "turn" | "attachment-ref" | "outcome" ),
+  [ attrList ],
+  newline,
+  body,
+  directiveFenceFamily ;
+
+genericDirective =
+  directiveFenceFamily,
+  identifier,
+  [ attrList ],
+  newline,
+  body,
+  directiveFenceFamily ;
+
+legacySlideOpener = "%%%", [ attrList ], newline, { legacyZoneBlock | legacyGridBlock | legacyTextLine } ;
+legacyZoneBlock = "%%", [ " " | "\t" ], identifier, [ attrList ], newline, { ? legacy zone body text ? } ;
+legacyGridBlock = "%", [ " " | "\t" ], identifier, [ attrList ], newline, { ? legacy grid body text ? } ;
+legacyTextLine = { ? any legacy slide line that is not a zone or grid opener ? }, newline ;
+
+zoneSelector =
+  "header"
+  | "main"
+  | "aside"
+  | "footer"
+  | "background"
+  | "overlay"
+  | "label"
+  | "badge"
+  | "payload" ;
+
+attrList = "{", { ? any character except "}" ? }, "}" ;
+directiveFenceFamily = ":::", { ":" } ;
+identifier = letter, { letter | digit | "-" } ;
+block = { ? any block content not starting a directive or legacy slide opener ? } ;
+
+blankLine = [ " " | "\t" ], newline ;
+letter = "A".."Z" | "a".."z" ;
+digit = "0".."9" ;
+newline = "\n" | "\r\n" ;

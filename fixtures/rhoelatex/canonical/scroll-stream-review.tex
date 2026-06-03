@@ -1,0 +1,28 @@
+\documentclass{article}
+\usepackage{../../../reference-packs/rhoeLatexCore/rhoe-core}
+\begin{document}
+\begin{RhoeArtifact}[id={platform-guide}, title={Platform Guide}, carrier={scrollStream}, genre={ext.reviewStream}, compositionGrammar={stream/default}]
+\begin{RhoeFrontMatter}
+\begin{RhoeSupportMatter}
+Overview and navigation map.
+\end{RhoeSupportMatter}
+\end{RhoeFrontMatter}
+\begin{RhoeMainMatter}
+\begin{RhoeSection}[title={Runtime}]
+\begin{RhoeStream}
+\begin{RhoeFileSegment}[path={docs/intro.md}]
+Intro segment.
+\end{RhoeFileSegment}
+\begin{RhoeFileSegment}[path={docs/runtime.md}, id={runtime-target}]
+Runtime segment.
+\end{RhoeFileSegment}
+\end{RhoeStream}
+\end{RhoeSection}
+\end{RhoeMainMatter}
+\begin{RhoeBackMatter}
+\begin{RhoeSupportMatter}
+\RhoeRef[target={runtime-target}, mode={full}]
+\end{RhoeSupportMatter}
+\end{RhoeBackMatter}
+\end{RhoeArtifact}
+\end{document}

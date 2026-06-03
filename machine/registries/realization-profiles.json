@@ -1,0 +1,44 @@
+[
+  {
+    "id": "rhoeTypst/document",
+    "targetSurface": "rhoeTypst",
+    "label": "RhoeTypst Document",
+    "status": "baseline-stable"
+  },
+  {
+    "id": "rhoeTypst/presentation",
+    "targetSurface": "rhoeTypst",
+    "label": "RhoeTypst Presentation",
+    "status": "baseline-stable"
+  },
+  {
+    "id": "rhoeLatex/document",
+    "targetSurface": "rhoeLatex",
+    "label": "RhoeLaTeX Document",
+    "status": "baseline-stable"
+  },
+  {
+    "id": "rhoeLatex/presentation",
+    "targetSurface": "rhoeLatex",
+    "label": "RhoeLaTeX Presentation",
+    "status": "baseline-stable"
+  },
+  {
+    "id": "rhoeHtml/document",
+    "targetSurface": "rhoeHtml",
+    "label": "RhoeHTML Document",
+    "status": "baseline-stable"
+  },
+  {
+    "id": "rhoeHtml/viewer",
+    "targetSurface": "rhoeHtml",
+    "label": "RhoeHTML Viewer",
+    "status": "baseline-stable"
+  },
+  {
+    "id": "rhoeHtml/portal",
+    "targetSurface": "rhoeHtml",
+    "label": "RhoeHTML Portal",
+    "status": "baseline-stable"
+  }
+]

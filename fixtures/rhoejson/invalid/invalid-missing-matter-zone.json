@@ -1,0 +1,17 @@
+{
+  "kind": "Artifact",
+  "id": "missing-back-matter",
+  "title": "Missing Back Matter",
+  "carrierArchetype": "stageFrame",
+  "genre": "executiveDecision",
+  "matter": {
+    "frontMatter": [],
+    "mainMatter": []
+  },
+  "compositionGrammarRef": "executive/default",
+  "metadata": {},
+  "attachments": [],
+  "references": [],
+  "projections": [],
+  "transformationHistory": []
+}

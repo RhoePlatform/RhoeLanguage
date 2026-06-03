@@ -1,0 +1,12 @@
+[
+  { "source": "frontmatter", "target": "front-matter", "kind": "directive" },
+  { "source": "mainmatter", "target": "main-matter", "kind": "directive" },
+  { "source": "backmatter", "target": "back-matter", "kind": "directive" },
+  { "source": "slide", "target": "frame", "kind": "directive" },
+  { "source": "slide-section", "target": "frame-section", "kind": "directive" },
+  { "source": "shell-grammar", "target": "composition-grammar", "kind": "frontmatter-key" },
+  { "source": "presentation", "target": "artifact+stage/frame", "kind": "root-kind" },
+  { "source": "%%%", "target": "frame-compatibility-opener", "kind": "legacy-delimiter" },
+  { "source": "%%", "target": "stage-zone-compatibility", "kind": "legacy-delimiter" },
+  { "source": "%", "target": "stage-grid-compatibility", "kind": "legacy-delimiter" }
+]

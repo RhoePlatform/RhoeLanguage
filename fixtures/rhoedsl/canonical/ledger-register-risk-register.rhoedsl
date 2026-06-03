@@ -1,0 +1,27 @@
+Artifact(
+  id: "risk-register",
+  title: "Risk Register",
+  carrierArchetype: ledgerRegister,
+  genre: ext.operationsRegister,
+  compositionGrammarRef: "ledger/default"
+) {
+  FrontMatter {
+    Dashboard(title: "Portfolio Health") {
+      TextBlock(text: "Current portfolio health.")
+    }
+  }
+  MainMatter {
+    Collection(title: "Risks") {
+      Schema(title: "risk.v1") {
+      }
+      Record(id: "risk-001") {
+        TextBlock(text: "severity: high; owner: finance")
+      }
+    }
+  }
+  BackMatter {
+    Constraint(title: "Severity Constraint") {
+      TextBlock(text: "Severity must be one of low, medium, high.")
+    }
+  }
+}

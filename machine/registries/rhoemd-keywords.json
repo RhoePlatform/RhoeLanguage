@@ -1,0 +1,104 @@
+{
+  "headKeys": [
+    "kind",
+    "carrier",
+    "genre",
+    "title",
+    "composition-grammar",
+    "shell-grammar",
+    "brand",
+    "critic-profile",
+    "language",
+    "audience",
+    "status"
+  ],
+  "matterDirectives": [
+    "front-matter",
+    "main-matter",
+    "back-matter"
+  ],
+  "compatMatterDirectives": [
+    "frontmatter",
+    "mainmatter",
+    "backmatter"
+  ],
+  "universalStructureDirectives": [
+    "section",
+    "subsection",
+    "subsubsection"
+  ],
+  "stageDirectives": [
+    "frameset",
+    "frame",
+    "frame-section",
+    "appendix-frameset",
+    "zone"
+  ],
+  "nonStageDirectives": [
+    "codex",
+    "chapter",
+    "spread",
+    "appendix",
+    "reference-apparatus",
+    "stream",
+    "file-segment",
+    "anchor",
+    "support-matter",
+    "jump",
+    "tableau-document",
+    "page-family",
+    "tableau-page",
+    "region-group",
+    "hero-region",
+    "support-region",
+    "field-document",
+    "sheet",
+    "perimeter",
+    "top-band",
+    "bottom-band",
+    "side-band",
+    "region",
+    "register",
+    "collection",
+    "schema",
+    "record",
+    "form",
+    "dashboard",
+    "constraint",
+    "box",
+    "tag-catalog",
+    "fragment",
+    "subcollection",
+    "cluster",
+    "saved-view",
+    "thread",
+    "participant-profile",
+    "topic-briefing",
+    "conduct-doctrine",
+    "episode",
+    "branch",
+    "turn",
+    "attachment-ref",
+    "outcome"
+  ],
+  "stageZoneSelectors": [
+    "header",
+    "main",
+    "aside",
+    "footer",
+    "background",
+    "overlay",
+    "label",
+    "badge",
+    "payload"
+  ],
+  "deprecatedStageDirectives": [
+    "slide",
+    "slide-section"
+  ],
+  "deprecatedLegacyDelimiters": [
+    "%%%",
+    "%%",
+    "%"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "id": "projection.stageFrame.typst.zonePreservation",
+  "projectionKind": "typst",
+  "sourceFixture": "../rhoejson/valid/stage-frame-executive.json",
+  "requiredSemantics": [
+    "frame shell role remains externally observable",
+    "continuation metadata remains externally observable when present",
+    "header, main, and aside zones remain separately addressable",
+    "matter boundaries remain explicit in target source"
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "id": "rhoe.language-spec.v0_9",
+  "label": "Rhoe Language Specification v0.9.0",
+  "packageKind": "languageSpecRelease",
+  "version": "0.9.0",
+  "baselineVersion": "0.9.0",
+  "status": "stable_authority_baseline",
+  "authorityRepo": "RhoeLanguage",
+  "authorityMode": "authoritative_source",
+  "authoritativeEntrypoints": {
+    "normative_index": "00-index.md",
+    "specification_conventions": "SPECIFICATION-CONVENTIONS.md",
+    "versioning": "VERSIONING.md",
+    "glossary": "GLOSSARY.md",
+    "references": "REFERENCES.md",
+    "release_pack_summary": "compiled/rhoe-spec-v0_9-release-pack.md",
+    "validator": "scripts/validate-spec-v0_9.sh",
+    "cutover_verifier": "scripts/verify-cutover.sh",
+    "fixture_manifest": "fixtures/fixture-suite-v0_9.json"
+  },
+  "machineArtifacts": {
+    "schemas": [
+      "machine/schemas/composition-grammar-pack-manifest-v0_9.schema.json",
+      "machine/schemas/fixture-suite-manifest-v0_9.schema.json",
+      "machine/schemas/realization-pack-manifest-v0_9.schema.json",
+      "machine/schemas/rhoejson-canonical-v0_9.schema.json"
+    ],
+    "grammars": [
+      "machine/grammars/rhoedsl-v0_9.ebnf",
+      "machine/grammars/rhoemd-v0_9.ebnf",
+      "machine/grammars/rhoemd-v0_9.peg"
+    ],
+    "registries": [
+      "machine/registries/carriers.json",
+      "machine/registries/compatibility-aliases.json",
+      "machine/registries/composition-grammars.json",
+      "machine/registries/realization-packs.json",
+      "machine/registries/realization-profiles.json",
+      "machine/registries/rhoemd-keywords.json",
+      "machine/registries/stage-genres.json",
+      "machine/registries/stage-shell-roles.json",
+      "machine/registries/stage-zones.json",
+      "machine/registries/target-surfaces.json"
+    ],
+    "examples": [
+      "machine/examples/stage-default.composition-grammar-pack.json"
+    ]
+  },
+  "referencePackManifests": [
+    "reference-packs/rhoeHtmlCore/manifest.json",
+    "reference-packs/rhoeLatexCore/manifest.json",
+    "reference-packs/rhoeTypstCore/manifest.json"
+  ],
+  "compiledOutputs": [
+    "compiled/rhoe-spec-v0_9-release-pack.md"
+  ]
+}

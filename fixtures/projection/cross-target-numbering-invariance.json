@@ -1,0 +1,10 @@
+{
+  "id": "projection.crossTarget.numberingInvariance",
+  "projectionKind": "multi",
+  "sourceFixture": "../rhoejson/valid/stage-frame-executive.json",
+  "requiredSemantics": [
+    "stable IDs remain referenceable across Typst, LaTeX, and HTML",
+    "number-bearing constructs do not acquire projection-local numbering semantics",
+    "cross-reference labels remain semantically consistent"
+  ]
+}

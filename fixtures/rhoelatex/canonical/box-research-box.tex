@@ -1,0 +1,25 @@
+\documentclass{article}
+\usepackage{../../../reference-packs/rhoeLatexCore/rhoe-core}
+\begin{document}
+\begin{RhoeArtifact}[id={research-box}, title={Research Box}, carrier={box}, genre={ext.researchBox}, compositionGrammar={box/default}]
+\begin{RhoeFrontMatter}
+\begin{RhoeTagCatalog}
+Theme, source, and confidence tags.
+\end{RhoeTagCatalog}
+\end{RhoeFrontMatter}
+\begin{RhoeMainMatter}
+\begin{RhoeSection}[title={Collected Fragments}]
+\begin{RhoeBox}[title={Collected Fragments}]
+\begin{RhoeFragment}[id={frag-001}]
+Primary source fragment.
+\end{RhoeFragment}
+\end{RhoeBox}
+\end{RhoeSection}
+\end{RhoeMainMatter}
+\begin{RhoeBackMatter}
+\begin{RhoeSavedView}[title={Curated View}]
+\RhoeRef[target={frag-001}, mode={full}]
+\end{RhoeSavedView}
+\end{RhoeBackMatter}
+\end{RhoeArtifact}
+\end{document}

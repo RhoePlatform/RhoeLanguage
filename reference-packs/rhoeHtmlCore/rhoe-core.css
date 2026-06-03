@@ -1,0 +1,76 @@
+:root {
+  --rhoe-font-body: "Source Serif 4", serif;
+  --rhoe-font-ui: "IBM Plex Sans", sans-serif;
+  --rhoe-color-text: #202020;
+  --rhoe-color-surface: #fffdf8;
+  --rhoe-color-accent: #0d5a68;
+  --rhoe-color-border: #d7d0c4;
+}
+
+body {
+  margin: 0;
+  font-family: var(--rhoe-font-body);
+  color: var(--rhoe-color-text);
+  background: var(--rhoe-color-surface);
+}
+
+.rhoe-artifact {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.rhoe-viewer-toolbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  padding: 0.875rem 1.25rem;
+  border-bottom: 1px solid var(--rhoe-color-border);
+  background: var(--rhoe-color-surface-muted);
+  font-family: var(--rhoe-font-ui);
+  font-size: 0.95rem;
+}
+
+.rhoe-viewer-toolbar p {
+  margin: 0;
+}
+
+.rhoe-front-matter,
+.rhoe-main-matter,
+.rhoe-back-matter,
+.rhoe-frame,
+.rhoe-box,
+.rhoe-thread,
+.rhoe-record {
+  margin-block: 1.25rem;
+}
+
+.rhoe-zone[data-rhoe-role="header"] {
+  font-family: var(--rhoe-font-ui);
+  font-weight: 600;
+}
+
+.rhoe-viewer .rhoe-frame[hidden] {
+  display: none;
+}
+
+.rhoe-viewer .rhoe-frame[data-rhoe-active="true"] {
+  outline: 2px solid var(--rhoe-color-accent);
+  outline-offset: 0.15rem;
+}
+
+.rhoe-viewer.is-presenter-mode .rhoe-artifact {
+  max-width: 88rem;
+}
+
+.rhoe-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.rhoe-table th,
+.rhoe-table td {
+  border: 1px solid var(--rhoe-color-border);
+  padding: 0.5rem 0.75rem;
+}

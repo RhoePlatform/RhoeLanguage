@@ -1,0 +1,33 @@
+{
+  "kind": "Artifact",
+  "id": "broken-codex",
+  "title": "Broken Codex",
+  "carrierArchetype": "codexSpread",
+  "genre": "ext.referenceCodex",
+  "matter": {
+    "frontMatter": [],
+    "mainMatter": [
+      {
+        "kind": "Frame",
+        "zones": [
+          {
+            "zoneType": "main",
+            "children": [
+              {
+                "kind": "TextBlock",
+                "text": "Illegal stage node inside codex carrier."
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "backMatter": []
+  },
+  "compositionGrammarRef": "codex/default",
+  "metadata": {},
+  "attachments": [],
+  "references": [],
+  "projections": [],
+  "transformationHistory": []
+}

@@ -1,0 +1,180 @@
+{
+  "kind": "Artifact",
+  "id": "artifact-workbench-board-readiness-master",
+  "title": "Board Readiness Update",
+  "carrierArchetype": "stageFrame",
+  "genre": "artifactWorkbench.boardReadiness",
+  "matter": {
+    "frontMatter": [
+      {
+        "kind": "FrameSet",
+        "id": "artifact-workbench-opening",
+        "frames": [
+          {
+            "kind": "Frame",
+            "id": "cover",
+            "shell": {
+              "shellPackRef": "rhoe.core.stage-default",
+              "shellRole": "coverOpener",
+              "shellArchetypeRef": "artifact-workbench-cover"
+            },
+            "zones": [
+              {
+                "zoneType": "main",
+                "children": [
+                  {
+                    "kind": "TextBlock",
+                    "text": "Board Readiness Update"
+                  },
+                  {
+                    "kind": "TextBlock",
+                    "text": "Semantic master for a local-first Artifact Workbench deck."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "mainMatter": [
+      {
+        "kind": "FrameSection",
+        "title": "Executive Spine",
+        "children": [
+          {
+            "kind": "FrameSet",
+            "id": "artifact-workbench-core",
+            "frames": [
+              {
+                "kind": "Frame",
+                "id": "decision-summary",
+                "shell": {
+                  "shellPackRef": "rhoe.core.stage-default",
+                  "shellRole": "executiveDecision",
+                  "shellArchetypeRef": "artifact-workbench-decision-summary"
+                },
+                "zones": [
+                  {
+                    "zoneType": "header",
+                    "children": [
+                      {
+                        "kind": "TextBlock",
+                        "text": "The refreshed operating model is ready for board review if the migration risk is explicitly gated."
+                      }
+                    ]
+                  },
+                  {
+                    "zoneType": "main",
+                    "children": [
+                      {
+                        "kind": "TableBlock",
+                        "rows": 4
+                      }
+                    ]
+                  },
+                  {
+                    "zoneType": "aside",
+                    "children": [
+                      {
+                        "kind": "TextBlock",
+                        "text": "Review gate: keep source data, assumptions, and recommendation text semantically linked."
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "kind": "Frame",
+                "id": "evidence-and-risk",
+                "shell": {
+                  "shellPackRef": "rhoe.core.stage-default",
+                  "shellRole": "evidenceRiskPair",
+                  "shellArchetypeRef": "artifact-workbench-evidence-risk"
+                },
+                "zones": [
+                  {
+                    "zoneType": "header",
+                    "children": [
+                      {
+                        "kind": "TextBlock",
+                        "text": "Evidence supports launch, while integration dependency remains the controlling risk."
+                      }
+                    ]
+                  },
+                  {
+                    "zoneType": "main",
+                    "children": [
+                      {
+                        "kind": "TextBlock",
+                        "text": "Local data exports, review comments, and recommendation blocks remain anchored to stable semantic slots."
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "backMatter": [
+      {
+        "kind": "AppendixFrameSet",
+        "id": "artifact-workbench-handoff",
+        "frames": [
+          {
+            "kind": "Frame",
+            "id": "handoff-checklist",
+            "shell": {
+              "shellPackRef": "rhoe.core.stage-default",
+              "shellRole": "appendixSupport"
+            },
+            "zones": [
+              {
+                "zoneType": "main",
+                "children": [
+                  {
+                    "kind": "TextBlock",
+                    "text": "Downstream lanes must consume this semantic master contract before implementing reconstruction, export, merge-back, authoring, runtime, or shell workflows."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "compositionGrammarRef": "artifact-workbench/board-readiness-v1",
+  "metadata": {
+    "artifactWorkbenchContract": {
+      "contractVersion": "phase23-contract-authority-v1",
+      "semanticMaster": true,
+      "templateArchetype": "board-readiness-update",
+      "requiredSlots": [
+        "artifact.title",
+        "artifact.context",
+        "artifact.decision",
+        "artifact.evidence",
+        "artifact.quantitativeNarrative",
+        "artifact.risk",
+        "artifact.recommendation",
+        "artifact.reviewGate"
+      ],
+      "frozenProperties": [
+        "carrierArchetype",
+        "genre",
+        "compositionGrammarRef",
+        "templateArchetype"
+      ],
+      "downstreamConsumptionRule": "consume-contract-authority-before-local-models"
+    }
+  },
+  "brandProfileRef": "artifact-workbench.boardroom",
+  "criticProfileRef": "artifact-workbench.executive-review",
+  "attachments": [],
+  "references": [],
+  "projections": [],
+  "transformationHistory": []
+}

@@ -1,0 +1,136 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://rhoe.dev/schemas/fixture-suite-manifest-v0_9.schema.json",
+  "title": "Fixture Suite Manifest v0.9.0",
+  "type": "object",
+  "required": [
+    "suiteId",
+    "version",
+    "fixtures"
+  ],
+  "properties": {
+    "suiteId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "version": {
+      "const": "0.9.0"
+    },
+    "fixtures": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/fixtureEntry"
+      }
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "fixtureEntry": {
+      "type": "object",
+      "required": [
+        "id",
+        "family",
+        "format",
+        "path",
+        "validity"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "family": {
+          "type": "string",
+          "enum": [
+            "canonical-rhoejson",
+            "canonical-rhoemd",
+            "canonical-rhoedsl",
+            "canonical-rhoetypst",
+            "canonical-rhoelatex",
+            "canonical-rhoehtml",
+            "compatibility-lowering",
+            "carrier-node-placement",
+            "projection-conformance",
+            "artifact-workbench-contract"
+          ]
+        },
+        "format": {
+          "type": "string",
+          "enum": [
+            "json",
+            "markdown",
+            "rhoedsl",
+            "typst",
+            "latex",
+            "html",
+            "projection-assertion"
+          ]
+        },
+        "path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "carrierArchetype": {
+          "type": "string",
+          "enum": [
+            "stageFrame",
+            "codexSpread",
+            "scrollStream",
+            "tableauPageCollage",
+            "sheetField",
+            "ledgerRegister",
+            "box",
+            "conversationThread"
+          ]
+        },
+        "targetSurface": {
+          "type": "string",
+          "enum": [
+            "rhoeTypst",
+            "rhoeLatex",
+            "rhoeHtml"
+          ]
+        },
+        "realizationProfile": {
+          "type": "string",
+          "enum": [
+            "rhoeTypst/document",
+            "rhoeTypst/presentation",
+            "rhoeLatex/document",
+            "rhoeLatex/presentation",
+            "rhoeHtml/document",
+            "rhoeHtml/viewer",
+            "rhoeHtml/portal"
+          ]
+        },
+        "validity": {
+          "type": "string",
+          "enum": [
+            "valid",
+            "invalid"
+          ]
+        },
+        "canonical": {
+          "type": "boolean"
+        },
+        "expectedCanonicalAst": {
+          "type": "string"
+        },
+        "expectedNormalizationTarget": {
+          "type": "string"
+        },
+        "expectedDiagnostics": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "notes": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

@@ -1,0 +1,112 @@
+Document
+  <- Head? Body EOF
+
+Head
+  <- YamlFence (!YamlFenceLine .)* YamlFence
+
+Body
+  <- (BlankLine / MatterDirective / Directive / Block)*
+
+MatterDirective
+  <- CanonicalMatterDirective / CompatMatterDirective
+
+CanonicalMatterDirective
+  <- DirectiveFenceFamily ('front-matter' / 'main-matter' / 'back-matter') AttrList? Newline Body DirectiveFenceFamily
+
+CompatMatterDirective
+  <- DirectiveFenceFamily ('frontmatter' / 'mainmatter' / 'backmatter') AttrList? Newline Body DirectiveFenceFamily
+
+Directive
+  <- UniversalStructureDirective
+   / StageDirective
+   / DeprecatedSlideDirective
+   / CodexDirective
+   / ScrollDirective
+   / TableauDirective
+   / SheetDirective
+   / LedgerDirective
+   / BoxDirective
+   / ConversationDirective
+   / GenericDirective
+   / LegacySlideOpener
+
+UniversalStructureDirective
+  <- DirectiveFenceFamily ('section' / 'subsection' / 'subsubsection') AttrList? Newline Body DirectiveFenceFamily
+
+StageDirective
+  <- DirectiveFenceFamily ('frameset' / 'frame' / 'frame-section' / 'appendix-frameset' / 'zone') SelectorOrAttrs? Newline Body DirectiveFenceFamily
+
+DeprecatedSlideDirective
+  <- DirectiveFenceFamily ('slide' / 'slide-section') SelectorOrAttrs? Newline Body DirectiveFenceFamily
+
+CodexDirective
+  <- DirectiveFenceFamily ('codex' / 'chapter' / 'spread' / 'appendix' / 'reference-apparatus') AttrList? Newline Body DirectiveFenceFamily
+
+ScrollDirective
+  <- DirectiveFenceFamily ('stream' / 'file-segment' / 'anchor' / 'support-matter' / 'jump') AttrList? Newline Body DirectiveFenceFamily
+
+TableauDirective
+  <- DirectiveFenceFamily ('tableau-document' / 'page-family' / 'tableau-page' / 'region-group' / 'hero-region' / 'support-region') AttrList? Newline Body DirectiveFenceFamily
+
+SheetDirective
+  <- DirectiveFenceFamily ('field-document' / 'sheet' / 'perimeter' / 'top-band' / 'bottom-band' / 'side-band' / 'region') AttrList? Newline Body DirectiveFenceFamily
+
+LedgerDirective
+  <- DirectiveFenceFamily ('register' / 'collection' / 'schema' / 'record' / 'form' / 'dashboard' / 'constraint') AttrList? Newline Body DirectiveFenceFamily
+
+BoxDirective
+  <- DirectiveFenceFamily ('box' / 'tag-catalog' / 'fragment' / 'subcollection' / 'cluster' / 'saved-view') AttrList? Newline Body DirectiveFenceFamily
+
+ConversationDirective
+  <- DirectiveFenceFamily ('thread' / 'participant-profile' / 'topic-briefing' / 'conduct-doctrine' / 'episode' / 'branch' / 'turn' / 'attachment-ref' / 'outcome') AttrList? Newline Body DirectiveFenceFamily
+
+GenericDirective
+  <- DirectiveFenceFamily Identifier AttrList? Newline Body DirectiveFenceFamily
+
+LegacySlideOpener
+  <- '%%%' Spacing AttrList? Newline LegacySlideBody
+
+LegacySlideBody
+  <- (LegacyZoneBlock / LegacyGridBlock / !('%%%' / EOF) .)*
+
+LegacyZoneBlock
+  <- '%%' Spacing Identifier AttrList? Newline (!('%%' / '%' / '%%%' / EOF) .)*
+
+LegacyGridBlock
+  <- '%' Spacing Identifier AttrList? Newline (!('%%' / '%' / '%%%' / EOF) .)*
+
+SelectorOrAttrs
+  <- (Spacing ZoneSelector)? AttrList?
+
+ZoneSelector
+  <- 'header' / 'main' / 'aside' / 'footer' / 'background' / 'overlay' / 'label' / 'badge' / 'payload'
+
+Block
+  <- (!DirectiveFenceFamily !'%%%' .)+
+
+DirectiveFenceFamily
+  <- ':::' ':'*
+
+AttrList
+  <- Spacing '{' (!'}' .)* '}'
+
+Identifier
+  <- [A-Za-z] [A-Za-z0-9-]*
+
+YamlFence
+  <- '---' Newline
+
+YamlFenceLine
+  <- '---'
+
+BlankLine
+  <- Spacing Newline
+
+Spacing
+  <- [ \t]*
+
+Newline
+  <- '\r\n' / '\n'
+
+EOF
+  <- !.

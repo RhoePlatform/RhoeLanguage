@@ -1,0 +1,13 @@
+{
+  "id": "projection.crossTarget.matterPreservation",
+  "projectionKind": "multi",
+  "sourceFixtures": [
+    "../rhoejson/valid/codex-spread-reference.json",
+    "../rhoejson/valid/stage-frame-executive.json"
+  ],
+  "requiredSemantics": [
+    "frontMatter remains explicit",
+    "mainMatter remains explicit",
+    "backMatter remains explicit"
+  ]
+}

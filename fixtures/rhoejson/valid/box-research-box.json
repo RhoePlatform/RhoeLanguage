@@ -1,0 +1,57 @@
+{
+  "kind": "Artifact",
+  "id": "research-box",
+  "title": "Research Box",
+  "carrierArchetype": "box",
+  "genre": "ext.researchBox",
+  "matter": {
+    "frontMatter": [
+      {
+        "kind": "TagCatalog",
+        "title": "Tag Glossary",
+        "children": [
+          {
+            "kind": "TextBlock",
+            "text": "Theme, source, and confidence tags."
+          }
+        ]
+      }
+    ],
+    "mainMatter": [
+      {
+        "kind": "Box",
+        "title": "Collected Fragments",
+        "children": [
+          {
+            "kind": "Fragment",
+            "id": "frag-001",
+            "children": [
+              {
+                "kind": "TextBlock",
+                "text": "Primary source fragment."
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "backMatter": [
+      {
+        "kind": "SavedView",
+        "title": "Curated View",
+        "children": [
+          {
+            "kind": "TextBlock",
+            "text": "Cross-source synthesis view."
+          }
+        ]
+      }
+    ]
+  },
+  "compositionGrammarRef": "box/default",
+  "metadata": {},
+  "attachments": [],
+  "references": [],
+  "projections": [],
+  "transformationHistory": []
+}

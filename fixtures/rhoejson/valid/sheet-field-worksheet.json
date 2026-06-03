@@ -1,0 +1,57 @@
+{
+  "kind": "Artifact",
+  "id": "planning-sheet",
+  "title": "Planning Sheet",
+  "carrierArchetype": "sheetField",
+  "genre": "ext.sheetWorkspace",
+  "matter": {
+    "frontMatter": [
+      {
+        "kind": "TopBand",
+        "title": "Header Band",
+        "children": [
+          {
+            "kind": "TextBlock",
+            "text": "Working assumptions and owner notes."
+          }
+        ]
+      }
+    ],
+    "mainMatter": [
+      {
+        "kind": "Sheet",
+        "title": "Current Plan",
+        "children": [
+          {
+            "kind": "Region",
+            "title": "Main Workspace",
+            "children": [
+              {
+                "kind": "TextBlock",
+                "text": "Primary worksheet region."
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "backMatter": [
+      {
+        "kind": "BottomBand",
+        "title": "Footer Band",
+        "children": [
+          {
+            "kind": "TextBlock",
+            "text": "Carry-forward tasks and archive notes."
+          }
+        ]
+      }
+    ]
+  },
+  "compositionGrammarRef": "sheet/default",
+  "metadata": {},
+  "attachments": [],
+  "references": [],
+  "projections": [],
+  "transformationHistory": []
+}

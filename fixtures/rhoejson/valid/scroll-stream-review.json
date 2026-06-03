@@ -1,0 +1,67 @@
+{
+  "kind": "Artifact",
+  "id": "platform-guide",
+  "title": "Platform Guide",
+  "carrierArchetype": "scrollStream",
+  "genre": "ext.reviewStream",
+  "matter": {
+    "frontMatter": [
+      {
+        "kind": "SupportMatter",
+        "title": "Overview",
+        "children": [
+          {
+            "kind": "TextBlock",
+            "text": "Overview and navigation map."
+          }
+        ]
+      }
+    ],
+    "mainMatter": [
+      {
+        "kind": "Stream",
+        "title": "Guide",
+        "children": [
+          {
+            "kind": "FileSegment",
+            "title": "Intro",
+            "children": [
+              {
+                "kind": "TextBlock",
+                "text": "Intro segment."
+              }
+            ]
+          },
+          {
+            "kind": "FileSegment",
+            "title": "Runtime",
+            "children": [
+              {
+                "kind": "TextBlock",
+                "text": "Runtime segment."
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "backMatter": [
+      {
+        "kind": "SupportMatter",
+        "title": "References",
+        "children": [
+          {
+            "kind": "TextBlock",
+            "text": "Reference links and change log."
+          }
+        ]
+      }
+    ]
+  },
+  "compositionGrammarRef": "stream/default",
+  "metadata": {},
+  "attachments": [],
+  "references": [],
+  "projections": [],
+  "transformationHistory": []
+}

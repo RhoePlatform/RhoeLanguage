@@ -1,0 +1,27 @@
+\documentclass{article}
+\usepackage{../../../reference-packs/rhoeLatexCore/rhoe-core}
+\begin{document}
+\begin{RhoeArtifact}[id={design-review-thread}, title={Design Review Thread}, carrier={conversationThread}, genre={ext.designReviewThread}, compositionGrammar={conversation/default}]
+\begin{RhoeFrontMatter}
+\begin{RhoeParticipantProfile}[id={alex}]
+Product lead
+\end{RhoeParticipantProfile}
+\end{RhoeFrontMatter}
+\begin{RhoeMainMatter}
+\begin{RhoeSection}[title={API Review}]
+\begin{RhoeThread}
+\begin{RhoeEpisode}[title={API review}]
+\begin{RhoeTurn}[speaker={alex}, id={turn-001}]
+We should keep the carrier registry closed in core.
+\end{RhoeTurn}
+\end{RhoeEpisode}
+\end{RhoeThread}
+\end{RhoeSection}
+\end{RhoeMainMatter}
+\begin{RhoeBackMatter}
+\begin{RhoeOutcome}
+\RhoeRef[target={turn-001}, mode={full}]
+\end{RhoeOutcome}
+\end{RhoeBackMatter}
+\end{RhoeArtifact}
+\end{document}

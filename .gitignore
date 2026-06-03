@@ -1,0 +1,9 @@
+.DS_Store
+.tmp/
+.cache/
+.docs-site-src/
+site/
+.venv/
+__pycache__/
+*.pyc
+node_modules/

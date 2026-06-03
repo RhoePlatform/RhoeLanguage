@@ -1,0 +1,89 @@
+{
+  "kind": "Artifact",
+  "id": "campaign-brief",
+  "title": "Campaign Brief",
+  "carrierArchetype": "tableauPageCollage",
+  "genre": "ext.tableauBrief",
+  "matter": {
+    "frontMatter": [
+      {
+        "kind": "PageFamily",
+        "title": "Cover Family",
+        "children": [
+          {
+            "kind": "TableauPage",
+            "title": "Cover",
+            "children": [
+              {
+                "kind": "HeroRegion",
+                "children": [
+                  {
+                    "kind": "TextBlock",
+                    "text": "Campaign brief opener."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "mainMatter": [
+      {
+        "kind": "PageFamily",
+        "title": "Core Pages",
+        "children": [
+          {
+            "kind": "TableauPage",
+            "title": "Analysis",
+            "children": [
+              {
+                "kind": "RegionGroup",
+                "children": [
+                  {
+                    "kind": "SupportRegion",
+                    "children": [
+                      {
+                        "kind": "TextBlock",
+                        "text": "Supporting findings."
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "backMatter": [
+      {
+        "kind": "PageFamily",
+        "title": "Closing Family",
+        "children": [
+          {
+            "kind": "TableauPage",
+            "title": "Credits",
+            "children": [
+              {
+                "kind": "SupportRegion",
+                "children": [
+                  {
+                    "kind": "TextBlock",
+                    "text": "Credits and legal footer."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "compositionGrammarRef": "tableau/default",
+  "metadata": {},
+  "attachments": [],
+  "references": [],
+  "projections": [],
+  "transformationHistory": []
+}

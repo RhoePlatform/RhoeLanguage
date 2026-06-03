@@ -1,0 +1,62 @@
+{
+  "kind": "Artifact",
+  "id": "design-review-thread",
+  "title": "Design Review Thread",
+  "carrierArchetype": "conversationThread",
+  "genre": "ext.designReviewThread",
+  "matter": {
+    "frontMatter": [
+      {
+        "kind": "ParticipantProfile",
+        "id": "alex",
+        "children": [
+          {
+            "kind": "TextBlock",
+            "text": "Product lead."
+          }
+        ]
+      }
+    ],
+    "mainMatter": [
+      {
+        "kind": "Thread",
+        "title": "API Review",
+        "children": [
+          {
+            "kind": "Episode",
+            "title": "Carrier Registry",
+            "children": [
+              {
+                "kind": "Turn",
+                "children": [
+                  {
+                    "kind": "TextBlock",
+                    "text": "We should keep the carrier registry closed in core."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "backMatter": [
+      {
+        "kind": "Outcome",
+        "title": "Decision",
+        "children": [
+          {
+            "kind": "TextBlock",
+            "text": "Closed core carrier registry retained."
+          }
+        ]
+      }
+    ]
+  },
+  "compositionGrammarRef": "conversation/default",
+  "metadata": {},
+  "attachments": [],
+  "references": [],
+  "projections": [],
+  "transformationHistory": []
+}

@@ -1,0 +1,59 @@
+[
+  {
+    "id": "rhoeTypstCore",
+    "targetSurface": "rhoeTypst",
+    "label": "RhoeTypst Core",
+    "status": "baseline-stable",
+    "packageKind": "realizationPack",
+    "profiles": ["rhoeTypst/document", "rhoeTypst/presentation"],
+    "carrierArchetypes": [
+      "stageFrame",
+      "codexSpread",
+      "scrollStream",
+      "tableauPageCollage",
+      "sheetField",
+      "ledgerRegister",
+      "box",
+      "conversationThread"
+    ],
+    "manifestPath": "../../reference-packs/rhoeTypstCore/manifest.json"
+  },
+  {
+    "id": "rhoeLatexCore",
+    "targetSurface": "rhoeLatex",
+    "label": "RhoeLaTeX Core",
+    "status": "baseline-stable",
+    "packageKind": "realizationPack",
+    "profiles": ["rhoeLatex/document", "rhoeLatex/presentation"],
+    "carrierArchetypes": [
+      "stageFrame",
+      "codexSpread",
+      "scrollStream",
+      "tableauPageCollage",
+      "sheetField",
+      "ledgerRegister",
+      "box",
+      "conversationThread"
+    ],
+    "manifestPath": "../../reference-packs/rhoeLatexCore/manifest.json"
+  },
+  {
+    "id": "rhoeHtmlCore",
+    "targetSurface": "rhoeHtml",
+    "label": "RhoeHTML Core",
+    "status": "baseline-stable",
+    "packageKind": "realizationPack",
+    "profiles": ["rhoeHtml/document", "rhoeHtml/viewer", "rhoeHtml/portal"],
+    "carrierArchetypes": [
+      "stageFrame",
+      "codexSpread",
+      "scrollStream",
+      "tableauPageCollage",
+      "sheetField",
+      "ledgerRegister",
+      "box",
+      "conversationThread"
+    ],
+    "manifestPath": "../../reference-packs/rhoeHtmlCore/manifest.json"
+  }
+]

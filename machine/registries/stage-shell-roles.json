@@ -1,0 +1,14 @@
+[
+  { "id": "coverOpener", "surface": "cover-opener", "label": "Cover / Opener" },
+  { "id": "sectionDivider", "surface": "section-divider", "label": "Section Divider" },
+  { "id": "heroClaim", "surface": "hero-claim", "label": "Hero Claim" },
+  { "id": "contextSetup", "surface": "context-setup", "label": "Context / Setup" },
+  { "id": "evidenceProof", "surface": "evidence-proof", "label": "Evidence / Proof" },
+  { "id": "frameworkModel", "surface": "framework-model", "label": "Framework / Model" },
+  { "id": "comparisonOption", "surface": "comparison-option", "label": "Comparison / Option" },
+  { "id": "processJourney", "surface": "process-journey", "label": "Process / Journey" },
+  { "id": "recommendationAsk", "surface": "recommendation-ask", "label": "Recommendation / Ask" },
+  { "id": "summaryTakeaway", "surface": "summary-takeaway", "label": "Summary / Takeaway" },
+  { "id": "closingLanding", "surface": "closing-landing", "label": "Closing / Landing" },
+  { "id": "appendixSupport", "surface": "appendix-support", "label": "Appendix / Support" }
+]

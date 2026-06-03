@@ -1,0 +1,74 @@
+[
+  {
+    "id": "executive/default",
+    "carrierArchetype": "stageFrame",
+    "label": "Executive Default",
+    "status": "core-stable",
+    "packageKind": "compositionGrammarPack",
+    "provides": ["executive/default"]
+  },
+  {
+    "id": "stage/default",
+    "carrierArchetype": "stageFrame",
+    "label": "Stage Default",
+    "status": "baseline-stable",
+    "packageKind": "compositionGrammarPack",
+    "provides": ["stage/default"]
+  },
+  {
+    "id": "codex/default",
+    "carrierArchetype": "codexSpread",
+    "label": "Codex Default",
+    "status": "baseline-stable",
+    "packageKind": "compositionGrammarPack",
+    "provides": ["codex/default"]
+  },
+  {
+    "id": "stream/default",
+    "carrierArchetype": "scrollStream",
+    "label": "Stream Default",
+    "status": "baseline-stable",
+    "packageKind": "compositionGrammarPack",
+    "provides": ["stream/default"]
+  },
+  {
+    "id": "tableau/default",
+    "carrierArchetype": "tableauPageCollage",
+    "label": "Tableau Default",
+    "status": "baseline-stable",
+    "packageKind": "compositionGrammarPack",
+    "provides": ["tableau/default"]
+  },
+  {
+    "id": "sheet/default",
+    "carrierArchetype": "sheetField",
+    "label": "Sheet Default",
+    "status": "baseline-stable",
+    "packageKind": "compositionGrammarPack",
+    "provides": ["sheet/default"]
+  },
+  {
+    "id": "ledger/default",
+    "carrierArchetype": "ledgerRegister",
+    "label": "Ledger Default",
+    "status": "baseline-stable",
+    "packageKind": "compositionGrammarPack",
+    "provides": ["ledger/default"]
+  },
+  {
+    "id": "box/default",
+    "carrierArchetype": "box",
+    "label": "Box Default",
+    "status": "baseline-stable",
+    "packageKind": "compositionGrammarPack",
+    "provides": ["box/default"]
+  },
+  {
+    "id": "conversation/default",
+    "carrierArchetype": "conversationThread",
+    "label": "Conversation Default",
+    "status": "baseline-stable",
+    "packageKind": "compositionGrammarPack",
+    "provides": ["conversation/default"]
+  }
+]

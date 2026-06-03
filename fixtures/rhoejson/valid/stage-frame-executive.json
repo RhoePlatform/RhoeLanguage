@@ -1,0 +1,120 @@
+{
+  "kind": "Artifact",
+  "id": "growth-review",
+  "title": "Growth Strategy Review",
+  "carrierArchetype": "stageFrame",
+  "genre": "executiveDecision",
+  "matter": {
+    "frontMatter": [
+      {
+        "kind": "FrameSet",
+        "id": "opening",
+        "frames": [
+          {
+            "kind": "Frame",
+            "id": "opening-1",
+            "zones": [
+              {
+                "zoneType": "main",
+                "children": [
+                  {
+                    "kind": "TextBlock",
+                    "text": "Growth Strategy Review"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "mainMatter": [
+      {
+        "kind": "FrameSection",
+        "title": "Decision",
+        "children": [
+          {
+            "kind": "FrameSet",
+            "id": "core",
+            "frames": [
+              {
+                "kind": "Frame",
+                "id": "decision-1",
+                "shell": {
+                  "shellPackRef": "rhoe.core.stage-default",
+                  "shellRole": "comparisonOption",
+                  "shellArchetypeRef": "option-comparison"
+                },
+                "continuationPolicy": {
+                  "kind": "continued"
+                },
+                "zones": [
+                  {
+                    "zoneType": "header",
+                    "children": [
+                      {
+                        "kind": "TextBlock",
+                        "text": "Option B creates the strongest margin expansion with acceptable execution risk."
+                      }
+                    ]
+                  },
+                  {
+                    "zoneType": "main",
+                    "children": [
+                      {
+                        "kind": "TableBlock",
+                        "rows": 3
+                      }
+                    ]
+                  },
+                  {
+                    "zoneType": "aside",
+                    "children": [
+                      {
+                        "kind": "TextBlock",
+                        "text": "Assumptions: phased migration, pricing uplift, no phase-one headcount reduction."
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "backMatter": [
+      {
+        "kind": "AppendixFrameSet",
+        "id": "appendix",
+        "frames": [
+          {
+            "kind": "Frame",
+            "id": "appendix-1",
+            "shell": {
+              "shellPackRef": "rhoe.core.stage-default",
+              "shellRole": "appendixSupport"
+            },
+            "zones": [
+              {
+                "zoneType": "main",
+                "children": [
+                  {
+                    "kind": "TextBlock",
+                    "text": "Appendix evidence and references."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "compositionGrammarRef": "executive/default",
+  "metadata": {},
+  "attachments": [],
+  "references": [],
+  "projections": [],
+  "transformationHistory": []
+}

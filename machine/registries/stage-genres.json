@@ -1,0 +1,37 @@
+[
+  {
+    "id": "storyJourney",
+    "surface": "story/journey",
+    "label": "Story / Journey",
+    "dominantVerb": "move",
+    "status": "core-stable"
+  },
+  {
+    "id": "pitchShowcase",
+    "surface": "pitch/showcase",
+    "label": "Pitch / Showcase",
+    "dominantVerb": "win",
+    "status": "core-stable"
+  },
+  {
+    "id": "executiveDecision",
+    "surface": "executive/decision",
+    "label": "Executive / Decision",
+    "dominantVerb": "decide",
+    "status": "core-stable"
+  },
+  {
+    "id": "reviewReference",
+    "surface": "review/reference",
+    "label": "Review / Reference",
+    "dominantVerb": "inspect",
+    "status": "core-stable"
+  },
+  {
+    "id": "explanationAlignment",
+    "surface": "explanation/alignment",
+    "label": "Explanation / Alignment",
+    "dominantVerb": "explain",
+    "status": "core-stable"
+  }
+]

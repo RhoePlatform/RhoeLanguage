@@ -1,0 +1,33 @@
+name: RhoeLanguage
+owner: RhoePlatform
+description: Normative Apache 2.0 specification, schemas, grammars, fixtures, and reference packs for the Rhoe language family.
+homepage: https://rhoeplatform.github.io/RhoeLanguage/
+license: Apache-2.0
+visibility: private-until-public-launch
+release: v0.9.0
+primary_language: Markdown
+specification:
+  baseline: v0.9.0
+  authority_manifest: machine/registries/rhoe-language-spec-release.json
+  release_pack: compiled/rhoe-spec-v0_9-release-pack.md
+topics:
+  - rhoeplatform
+  - rhoe-language
+  - specification
+  - markdown
+  - dsl
+  - json
+  - latex
+  - typst
+  - html
+  - ast
+  - schema
+  - grammar
+  - fixtures
+  - validation
+  - publishing
+  - apache-2-0
+public_launch:
+  intended_visibility: public
+  source_archive: GitHub release tag v0.9.0
+  documentation: GitHub Pages reference artifact

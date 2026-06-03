@@ -1,0 +1,11 @@
+[
+  { "id": "header", "group": "structural", "surface": "header" },
+  { "id": "main", "group": "structural", "surface": "main" },
+  { "id": "aside", "group": "structural", "surface": "aside" },
+  { "id": "footer", "group": "structural", "surface": "footer" },
+  { "id": "background", "group": "field", "surface": "background" },
+  { "id": "overlay", "group": "field", "surface": "overlay" },
+  { "id": "label", "group": "semantic-auxiliary", "surface": "label" },
+  { "id": "badge", "group": "semantic-auxiliary", "surface": "badge" },
+  { "id": "payload", "group": "semantic-auxiliary", "surface": "payload" }
+]
